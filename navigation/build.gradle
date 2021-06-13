@@ -1,0 +1,11 @@
+import com.ghrisav.dependencies.Dependencies
+import com.ghrisav.dependencies.Modules
+import com.ghrisav.dependencies.Plugins
+
+apply from:"$rootDir/base_build__android_library.gradle"
+apply plugin: Plugins.navigationSafeArgsKotlin
+
+dependencies {
+    implementation Dependencies.AndroidX.navigationUi
+    implementation Dependencies.AndroidX.navigationFragment
+}

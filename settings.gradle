@@ -1,0 +1,12 @@
+rootProject.name = "BaseProject"
+include ':app'
+include ':common'
+include ':commonAndroid'
+include ':data:api'
+include ':data:source'
+include ':data:local'
+include ':data:model'
+include ':data:repository'
+include ':navigation'
+include ':features:login'
+include ':features:home'

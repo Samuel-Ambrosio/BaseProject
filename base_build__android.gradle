@@ -1,0 +1,90 @@
+import com.ghrisav.AppConfig
+import com.ghrisav.dependencies.Dependencies
+import com.ghrisav.dependencies.Plugins
+
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinKapt
+apply from: "$rootDir/base_build__common.gradle"
+
+android {
+    compileSdkVersion AppConfig.compileSdkVersion
+    buildToolsVersion AppConfig.buildToolsVersion
+    flavorDimensions "default"
+
+    defaultConfig {
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+        targetSdkVersion AppConfig.targetSdkVersion
+        minSdkVersion AppConfig.minSdkVersion
+        testInstrumentationRunner AppConfig.testInstrumentationRunner
+    }
+
+    productFlavors {
+        local {
+            buildConfigField "String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\""
+        }
+        pre {
+            buildConfigField "String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\""
+        }
+        pro {
+            buildConfigField "String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\""
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+        preproduction {
+            minifyEnabled true
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = AppConfig.kotlinJvmTarget
+    }
+}
+
+dependencies {
+
+    implementation Dependencies.AndroidX.coreKtx
+    implementation Dependencies.AndroidX.appCompat
+
+    implementation Dependencies.Koin.android
+
+    implementation Dependencies.AndroidX.lifecycleViewmodel
+    implementation Dependencies.AndroidX.lifecycleExtensions
+    implementation Dependencies.AndroidX.lifecycleLivedata
+
+    implementation Dependencies.AndroidX.constraintlayout
+    implementation Dependencies.AndroidX.swiperefreshlayout
+    implementation Dependencies.AndroidX.recyclerview
+
+    implementation Dependencies.AndroidX.navigationUi
+    implementation Dependencies.AndroidX.navigationFragment
+
+    implementation Dependencies.Google.material
+
+    implementation Dependencies.Glide.core
+    kapt Dependencies.Glide.compiler
+
+    testImplementation Dependencies.Test.junit
+    androidTestImplementation Dependencies.Test.androidJunit
+    androidTestImplementation Dependencies.Test.androidEspresso
+}
