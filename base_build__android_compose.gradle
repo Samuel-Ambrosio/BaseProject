@@ -1,0 +1,24 @@
+import com.samuelav.buildsrc.dependencies.Plugins
+import com.samuelav.buildsrc.dependencies.Versions
+import com.samuelav.buildsrc.dependencies.Dependencies
+import com.samuelav.buildsrc.AppConfig
+
+apply from: "$rootDir/base_build__android.gradle"
+
+dependencies {
+    implementation Dependencies.AndroidX.composeUi
+    implementation Dependencies.AndroidX.composeUiTooling
+    implementation Dependencies.AndroidX.composeMaterial
+    implementation Dependencies.AndroidX.composeFoundation
+    implementation Dependencies.AndroidX.composeIconsCore
+    implementation Dependencies.AndroidX.composeIconsExtended
+    implementation Dependencies.AndroidX.composeRuntimeLiveData
+
+    implementation Dependencies.AndroidX.composeActivity
+    implementation Dependencies.AndroidX.composeNavigation
+    implementation Dependencies.AndroidX.composeConstraint
+
+    implementation Dependencies.Koin.compose
+
+    androidTestImplementation Dependencies.Test.androidJunitCompose
+}

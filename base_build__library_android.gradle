@@ -1,0 +1,4 @@
+import com.samuelav.buildsrc.dependencies.Plugins
+
+apply plugin: Plugins.androidLibrary
+apply from: "$rootDir/base_build__android.gradle"

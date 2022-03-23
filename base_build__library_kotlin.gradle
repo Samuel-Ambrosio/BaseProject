@@ -1,0 +1,10 @@
+import com.samuelav.buildsrc.dependencies.Plugins
+
+apply plugin: Plugins.javaLibrary
+apply plugin: Plugins.kotlin
+apply from: "$rootDir/base_build__common.gradle"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

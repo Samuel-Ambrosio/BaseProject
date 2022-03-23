@@ -1,0 +1,27 @@
+import com.samuelav.buildsrc.AppConfig
+import com.samuelav.buildsrc.dependencies.Modules
+import com.samuelav.buildsrc.dependencies.Plugins
+
+apply plugin: Plugins.androidApplication
+apply from: "$rootDir/base_build__android_compose.gradle"
+
+android {
+    defaultConfig {
+        applicationId AppConfig.applicationId
+    }
+}
+
+dependencies {
+    implementation project(Modules.common)
+    implementation project(Modules.commonAndroid)
+
+    implementation project(Modules.analytics)
+
+    implementation project(Modules.dataSource)
+    implementation project(Modules.dataModel)
+    implementation project(Modules.dataRepository)
+    implementation project(Modules.dataLocal)
+    implementation project(Modules.dataRemote)
+
+    implementation project(Modules.featuresHome)
+}
