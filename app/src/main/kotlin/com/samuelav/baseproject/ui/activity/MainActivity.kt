@@ -1,4 +1,4 @@
-package com.samuelav.baseproject
+package com.samuelav.baseproject.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,13 +8,17 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.samuelav.baseproject.ui.theme.BaseProjectTheme
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.samuelav.baseproject.ui.theme.BaseTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
+
         setContent {
-            BaseProjectTheme {
+            BaseTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Greeting("Android")
@@ -32,7 +36,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    BaseProjectTheme {
+    BaseTheme {
         Greeting("Android")
     }
 }

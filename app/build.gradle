@@ -1,4 +1,5 @@
 import com.samuelav.buildsrc.AppConfig
+import com.samuelav.buildsrc.dependencies.Dependencies
 import com.samuelav.buildsrc.dependencies.Modules
 import com.samuelav.buildsrc.dependencies.Plugins
 
@@ -24,4 +25,6 @@ dependencies {
     implementation project(Modules.dataRemote)
 
     implementation project(Modules.featuresHome)
+
+    implementation Dependencies.AndroidX.splashScreen
 }

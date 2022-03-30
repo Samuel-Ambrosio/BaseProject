@@ -29,6 +29,8 @@ object Versions {
         const val composeActivity = "1.4.0"
         const val composeNavigation = "2.4.1"
         const val composeConstraint = "1.0.0"
+
+        const val splashScreen = "1.0.0-beta02"
     }
 
     object Google {

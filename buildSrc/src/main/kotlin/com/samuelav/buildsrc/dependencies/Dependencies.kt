@@ -34,6 +34,8 @@ sealed class Dependencies {
         const val composeActivity = "androidx.activity:activity-compose:${Versions.AndroidX.composeActivity}"
         const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.AndroidX.composeNavigation}"
         const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.AndroidX.composeConstraint}"
+
+        const val splashScreen = "androidx.core:core-splashscreen:${Versions.AndroidX.splashScreen}"
     }
 
     object Google {
