@@ -31,10 +31,12 @@ object Versions {
         const val composeConstraint = "1.0.0"
 
         const val splashScreen = "1.0.0-beta02"
+        const val dataStore = "1.0.0"
     }
 
     object Google {
         const val material = "1.5.0"
+        const val gson = "2.9.0"
     }
 
     object Room {

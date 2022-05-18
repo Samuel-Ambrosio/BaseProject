@@ -7,9 +7,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.samuelav.baseproject.ui.theme.BaseTheme
+import com.samuelav.commonandroid.CommandHandler
+import org.koin.androidx.compose.get
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +23,26 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             BaseTheme {
+                val splashViewModel: SplashViewModel = get()
+                val state by splashViewModel.state.collectAsState()
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    when(state) {
+                        is SplashState.Success -> Greeting("Success")
+                        is SplashState.Error -> {
+                            Greeting("Error")
+                        }
+                        is SplashState.Loading -> Greeting("Loading")
+                    }
+
+                    CommandHandler(viewModel = splashViewModel) { command ->
+                        when(command) {
+                            is SplashCommand.NavigateToHome -> {}
+                            is SplashCommand.NavigateToOnBoarding -> {}
+                        }
+                    }
                 }
+
             }
         }
     }

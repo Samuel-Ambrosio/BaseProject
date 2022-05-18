@@ -1,4 +1,5 @@
 import com.samuelav.buildsrc.dependencies.Modules
+import com.samuelav.buildsrc.dependencies.Dependencies
 
 apply from: "$rootDir/base_build__library_android.gradle"
 
@@ -6,4 +7,9 @@ dependencies {
     implementation project(Modules.common)
     implementation project(Modules.dataModel)
     implementation project(Modules.dataSource)
+
+    implementation Dependencies.Retrofit.core
+    implementation Dependencies.Retrofit.converterGson
+
+    implementation Dependencies.OkHttp3.interceptor
 }

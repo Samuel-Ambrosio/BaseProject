@@ -25,7 +25,7 @@ android {
     }
 
     productFlavors {
-        local {
+        dev {
             buildConfigField "String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\""
         }
         pre {
@@ -39,10 +39,6 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            debuggable true
-        }
-        preproduction {
-            minifyEnabled true
             debuggable true
         }
         release {

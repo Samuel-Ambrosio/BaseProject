@@ -10,5 +10,6 @@ object Modules {
     const val dataLocal = ":data:local"
     const val dataModel = ":data:model"
     const val dataRepository = ":data:repository"
+    const val domain = ":domain"
     const val featuresHome = ":features:home"
 }

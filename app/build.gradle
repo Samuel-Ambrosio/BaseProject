@@ -24,6 +24,8 @@ dependencies {
     implementation project(Modules.dataLocal)
     implementation project(Modules.dataRemote)
 
+    implementation project(Modules.domain)
+
     implementation project(Modules.featuresHome)
 
     implementation Dependencies.AndroidX.splashScreen

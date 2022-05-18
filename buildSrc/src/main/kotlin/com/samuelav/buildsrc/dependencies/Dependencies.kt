@@ -36,10 +36,21 @@ sealed class Dependencies {
         const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.AndroidX.composeConstraint}"
 
         const val splashScreen = "androidx.core:core-splashscreen:${Versions.AndroidX.splashScreen}"
+        const val dataStore = "androidx.datastore:datastore-preferences:${Versions.AndroidX.dataStore}"
     }
 
     object Google {
         const val material = "com.google.android.material:material:${Versions.Google.material}"
+        const val gson = "com.google.code.gson:gson:${Versions.Google.gson}"
+    }
+
+    object Retrofit {
+        const val core = "com.squareup.retrofit2:retrofit:${Versions.Retrofit.core}"
+        const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.core}"
+    }
+
+    object OkHttp3 {
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.OkHttp3.interceptor}"
     }
 
     object Test {
