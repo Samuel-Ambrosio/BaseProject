@@ -1,7 +1,7 @@
 package com.samuelav.baseproject.ui.activity
 
 import androidx.lifecycle.viewModelScope
-import com.samuelav.commonandroid.BaseViewModel
+import com.samuelav.commonandroid.ui.base.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

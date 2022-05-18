@@ -1,4 +1,4 @@
-package com.samuelav.commonandroid
+package com.samuelav.commonandroid.ui.base
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

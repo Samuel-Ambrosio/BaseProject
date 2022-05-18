@@ -1,4 +1,4 @@
-package com.samuelav.commonandroid
+package com.samuelav.commonandroid.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
