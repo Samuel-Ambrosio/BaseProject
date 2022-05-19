@@ -7,4 +7,7 @@ val localModule = module {
     single {
         preferencesDataStore(name = "data-store").getValue(thisRef = get(), property = String::javaClass)
     }
+    //single { appRoomDatabaseProvider(get()) }
 }
+
+//private fun appRoomDatabaseProvider(context: Context) = AppRoomDatabase.buildDatabase(context)

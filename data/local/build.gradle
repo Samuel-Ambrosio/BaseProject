@@ -8,6 +8,10 @@ dependencies {
     implementation project(Modules.dataModel)
     implementation project(Modules.dataSource)
 
+    implementation Dependencies.AndroidX.roomCoreRuntime
+    implementation Dependencies.AndroidX.roomCoreKtx
+    kapt Dependencies.AndroidX.roomCompiler
+
     implementation Dependencies.AndroidX.dataStore
     implementation Dependencies.Google.gson
 }

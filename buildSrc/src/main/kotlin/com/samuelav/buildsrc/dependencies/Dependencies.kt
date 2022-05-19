@@ -36,6 +36,10 @@ sealed class Dependencies {
         const val composeConstraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.AndroidX.composeConstraint}"
 
         const val splashScreen = "androidx.core:core-splashscreen:${Versions.AndroidX.splashScreen}"
+
+        const val roomCoreRuntime = "androidx.room:room-runtime:${Versions.AndroidX.room}"
+        const val roomCoreKtx = "androidx.room:room-ktx:${Versions.AndroidX.room}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.AndroidX.room}"
         const val dataStore = "androidx.datastore:datastore-preferences:${Versions.AndroidX.dataStore}"
     }
 
