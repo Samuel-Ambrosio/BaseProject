@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorInfo" format="color" />
+    <attr name="colorSuccess" format="color" />
+    <attr name="colorWarning" format="color" />
+</resources>
