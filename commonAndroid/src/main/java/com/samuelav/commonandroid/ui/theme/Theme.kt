@@ -14,7 +14,7 @@ fun AppTheme(
         if (isSystemInDarkTheme() && BuildConfig.DEBUG) BaseDarkAppColors else BaseLightAppColors,
     appTypography: AppTypography = AppTypography(),
     appSpacing: AppSpacing = AppSpacing(),
-    appIconography: AppIconography = AppIconography(),
+    appIconography: AppIconography = AppIconography,
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(

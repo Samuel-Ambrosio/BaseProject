@@ -1,7 +1,4 @@
-import com.samuelav.buildsrc.dependencies.Plugins
-import com.samuelav.buildsrc.dependencies.Versions
 import com.samuelav.buildsrc.dependencies.Dependencies
-import com.samuelav.buildsrc.AppConfig
 
 apply from: "$rootDir/base_build__android.gradle"
 
@@ -18,6 +15,12 @@ dependencies {
     implementation Dependencies.AndroidX.composeConstraint
 
     implementation Dependencies.Koin.compose
+
+    implementation Dependencies.Google.accompanistNavigationAnimation
+    implementation Dependencies.Google.accompanistPermissions
+    implementation Dependencies.Google.accompanistPager
+    implementation Dependencies.Google.accompanistSwipeToRefresh
+    implementation Dependencies.Google.accompanistPlaceholder
 
     debugImplementation Dependencies.AndroidX.composeUiTooling
     androidTestImplementation Dependencies.Test.androidJunitCompose

@@ -44,6 +44,12 @@ sealed class Dependencies {
     }
 
     object Google {
+        const val accompanistNavigationAnimation = "com.google.accompanist:accompanist-navigation-animation:${Versions.Google.accompanist}"
+        const val accompanistPermissions = "com.google.accompanist:accompanist-permissions:${Versions.Google.accompanist}"
+        const val accompanistPager = "com.google.accompanist:accompanist-pager:${Versions.Google.accompanist}"
+        const val accompanistSwipeToRefresh = "com.google.accompanist:accompanist-swiperefresh:${Versions.Google.accompanist}"
+        const val accompanistPlaceholder = "com.google.accompanist:accompanist-placeholder:${Versions.Google.accompanist}"
+
         const val material = "com.google.android.material:material:${Versions.Google.material}"
         const val gson = "com.google.code.gson:gson:${Versions.Google.gson}"
     }

@@ -5,22 +5,17 @@ import com.samuelav.commonandroid.ui.base.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-internal class SplashViewModel: BaseViewModel<SplashState, SplashCommand>(SplashState.Loading) {
+internal class SplashViewModel: BaseViewModel<SplashState, Unit>(SplashState.Loading) {
     init {
         viewModelScope.launch {
             delay(600)
-            emitState(SplashState.Success)
+            emitState(SplashState.AppNavigation)
         }
     }
 }
 
 internal sealed class SplashState {
-    object Success: SplashState()
-    object Error: SplashState()
     object Loading: SplashState()
-}
-
-internal sealed class SplashCommand {
-    object NavigateToHome: SplashCommand()
-    object NavigateToOnBoarding: SplashCommand()
+    object AppNavigation: SplashState()
+    object OnBoarding: SplashState()
 }

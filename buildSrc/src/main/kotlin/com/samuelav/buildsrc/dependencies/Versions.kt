@@ -37,6 +37,7 @@ object Versions {
     }
 
     object Google {
+        const val accompanist = "0.23.1"
         const val material = "1.5.0"
         const val gson = "2.9.0"
     }

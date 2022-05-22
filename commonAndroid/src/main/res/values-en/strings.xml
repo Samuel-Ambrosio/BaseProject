@@ -10,4 +10,7 @@
     <string name="result_error_service_unavailable">Service unavailable.</string>
     <string name="result_error_network">Network unavailable.</string>
     <string name="result_error_unknown">Something went wrong. Please try again later.</string>
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_search">Search</string>
+    <string name="nav_item_settings">Settings</string>
 </resources>

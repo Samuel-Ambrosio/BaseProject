@@ -10,4 +10,7 @@
     <string name="result_error_service_unavailable">Servicio no disponible.</string>
     <string name="result_error_network">Red no disponible.</string>
     <string name="result_error_unknown">Algo salió mal. Por favor, inténtelo de nuevo más tarde.</string>
+    <string name="nav_item_home">Inicio</string>
+    <string name="nav_item_search">Buscar</string>
+    <string name="nav_item_settings">Ajustes</string>
 </resources>
