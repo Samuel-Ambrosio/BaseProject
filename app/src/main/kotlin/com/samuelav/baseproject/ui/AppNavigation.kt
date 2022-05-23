@@ -1,6 +1,7 @@
 package com.samuelav.baseproject.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.padding
@@ -20,16 +21,16 @@ fun AppNavigation(
         topBar = {
             AnimatedVisibility(
                 visible = appState.isAppTopBarVisible(),
-                enter = slideInVertically { -it },
-                exit = slideOutVertically { -it }) {
+                enter = slideInVertically(animationSpec = tween()) { -it },
+                exit = slideOutVertically(animationSpec = tween()) { -it }) {
                 AppTopBar(appState = appState)
             }
          },
         bottomBar = {
             AnimatedVisibility(
                 visible = appState.isAppBottomNavigationBarVisible(),
-                enter = slideInVertically { it },
-                exit = slideOutVertically { it }) {
+                enter = slideInVertically(animationSpec = tween()) { it },
+                exit = slideOutVertically(animationSpec = tween()) { it }) {
                 AppBottomNavigationBar(appState = appState)
             }
         },

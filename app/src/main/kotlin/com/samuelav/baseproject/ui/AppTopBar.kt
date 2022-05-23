@@ -1,11 +1,14 @@
 package com.samuelav.baseproject.ui
 
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.Modifier
 import com.samuelav.commonandroid.app.AppState
+import com.samuelav.commonandroid.ui.composables.Heading2
 
 @Composable
 fun AppTopBar(appState: AppState) {
@@ -13,8 +16,9 @@ fun AppTopBar(appState: AppState) {
 
     TopAppBar(
         title = {
-            Text(
-                text = stringResource(id = screenConfig.appTopBarScreenConfig.title))
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                Heading2(text = screenConfig.appTopBarScreenConfig.title)
+            }
         }
     )
 }
