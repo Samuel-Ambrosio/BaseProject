@@ -18,6 +18,8 @@ object AppIconography {
     val chevronRight: Icon = Icon(resId = R.drawable.ic_chevron_right)
     val chevronUp: Icon = Icon(resId = R.drawable.ic_chevron_up)
     val chevronDown: Icon = Icon(resId = R.drawable.ic_chevron_down)
+    val arrowBack: Icon = Icon(resId = R.drawable.ic_arrow_back)
+    val arrowForward: Icon = Icon(resId = R.drawable.ic_arrow_forward)
 }
 
 data class Icon(@DrawableRes val resId: Int) {

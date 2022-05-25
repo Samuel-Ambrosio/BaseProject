@@ -40,7 +40,6 @@ fun rememberAppState(
                     ScreenConfig(
                         appTopBarScreenConfig =
                             AppTopBarScreenConfig(
-                                title = "",
                                 isVisible = appConfiguration.initialTopBarVisibility),
                         appBottomNavigationBarScreenConfig =
                             AppBottomNavigationBarScreenConfig(

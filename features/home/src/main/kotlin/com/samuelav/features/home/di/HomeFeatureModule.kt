@@ -1,4 +1,4 @@
-package com.samuelav.features.home
+package com.samuelav.features.home.di
 
 import org.koin.dsl.module
 
