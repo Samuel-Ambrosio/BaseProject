@@ -1,7 +1,7 @@
 package com.samuelav.data.remote.utils
 
-import com.samuelav.commonandroid.utils.Error
-import com.samuelav.commonandroid.utils.Result
+import com.samuelav.common.Error
+import com.samuelav.common.Result
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit

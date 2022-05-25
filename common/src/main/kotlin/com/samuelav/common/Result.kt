@@ -1,4 +1,4 @@
-package com.samuelav.commonandroid.utils
+package com.samuelav.common
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -39,6 +39,12 @@ inline fun <reified F, S> Result<F, S>.successOrNull(): S? =
 
 inline fun <reified F, S> Result<F, S>.failureOrNull(): F? =
     if (this is Result.Failure) error else null
+
+inline fun <F, S> Result<F, S>.ifSuccess(block: (S) -> Unit): Result<F, S> {
+    if (this is Result.Success) block(this.data)
+
+    return this
+}
 
 suspend inline fun <reified S> safeExecuteDataSource(
     crossinline block: suspend () -> Result<Error, S>

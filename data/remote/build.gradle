@@ -4,7 +4,7 @@ import com.samuelav.buildsrc.dependencies.Dependencies
 apply from: "$rootDir/base_build__library_android.gradle"
 
 dependencies {
-    implementation project(Modules.commonAndroid)
+    implementation project(Modules.common)
     implementation project(Modules.dataModel)
     implementation project(Modules.dataSource)
 
