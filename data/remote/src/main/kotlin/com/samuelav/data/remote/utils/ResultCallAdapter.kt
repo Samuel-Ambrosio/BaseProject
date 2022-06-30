@@ -1,7 +1,7 @@
 package com.samuelav.data.remote.utils
 
-import com.samuelav.common.Error
-import com.samuelav.common.Result
+import com.samuelav.common.utils.Error
+import com.samuelav.common.utils.Result
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.CallAdapter

@@ -4,4 +4,5 @@ apply from: "$rootDir/base_build__library_android_compose.gradle"
 
 dependencies {
     implementation project(Modules.common)
+    implementation project(Modules.dataModel)
 }

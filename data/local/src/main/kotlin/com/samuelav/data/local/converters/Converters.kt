@@ -4,14 +4,18 @@ import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
-import java.util.*
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZoneOffset
 
 class Converters {
     @TypeConverter
-    fun fromTimestamp(value: Long?): Date? = value?.let { Date(it) }
-
+    fun fromTimestamp(value: Long?): LocalDateTime? = value?.let {
+        LocalDateTime.ofInstant(Instant.ofEpochSecond(it), ZoneId.systemDefault())
+    }
     @TypeConverter
-    fun dateToTimestamp(date: Date?): Long? = date?.time
+    fun localDateTimeToTimestamp(date: LocalDateTime?): Long? = date?.toEpochSecond(ZoneOffset.UTC)
 
     @TypeConverter
     fun longListToJson(list: List<Long>?): String = Gson().toJson(list)

@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.samuelav.commonandroid.app.AppState
-import com.samuelav.commonandroid.ui.composables.BodyLargeBold
+import com.samuelav.commonandroid.ui.composables.base.BodyLargeBold
 import com.samuelav.commonandroid.ui.theme.AppTheme.colors
 import com.samuelav.commonandroid.ui.theme.AppTheme.icons
 import com.samuelav.commonandroid.ui.theme.AppTheme.spacing
@@ -18,6 +18,8 @@ import com.samuelav.commonandroid.ui.theme.AppTheme.spacing
 @Composable
 fun AppTopBar(appState: AppState) {
     val screenConfig by appState.screenConfig
+    val titleContent = screenConfig.appTopBarScreenConfig.titleContent
+    val actionsContent = screenConfig.appTopBarScreenConfig.actions
 
     ConstraintLayout(
         modifier = Modifier
@@ -45,23 +47,34 @@ fun AppTopBar(appState: AppState) {
             }
         }
 
-        BodyLargeBold(
-            modifier = Modifier.constrainAs(title) {
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-                top.linkTo(parent.top)
-                bottom.linkTo(parent.bottom)
-            },
-            text = screenConfig.appTopBarScreenConfig.title)
+        if (titleContent != null) {
+            Row(
+                modifier = Modifier.constrainAs(title) {
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                },
+                content = titleContent)
+        } else {
+            BodyLargeBold(
+                modifier = Modifier.constrainAs(title) {
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                },
+                text = screenConfig.appTopBarScreenConfig.title)
+        }
 
-        screenConfig.appTopBarScreenConfig.actions?.let {
+        if (actionsContent != null) {
             Row(
                 modifier = Modifier.constrainAs(actions) {
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
                 },
-                content = it)
+                content = actionsContent)
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.samuelav.commonandroid.ui.composables
+package com.samuelav.commonandroid.ui.composables.base
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

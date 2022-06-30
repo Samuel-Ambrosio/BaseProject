@@ -1,4 +1,4 @@
-package com.samuelav.common
+package com.samuelav.common.utils
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -39,6 +39,9 @@ inline fun <reified F, S> Result<F, S>.successOrNull(): S? =
 
 inline fun <reified F, S> Result<F, S>.failureOrNull(): F? =
     if (this is Result.Failure) error else null
+
+inline val <F, S> Result<F, S>?.isSuccess: Boolean
+    get() = this is Result.Success<S>
 
 inline fun <F, S> Result<F, S>.ifSuccess(block: (S) -> Unit): Result<F, S> {
     if (this is Result.Success) block(this.data)

@@ -16,8 +16,8 @@ import com.google.accompanist.navigation.animation.composable
 import com.samuelav.baseproject.R
 import com.samuelav.commonandroid.app.AppState
 import com.samuelav.commonandroid.app.navigation.NavItem
-import com.samuelav.commonandroid.ui.composables.Heading1
-import com.samuelav.commonandroid.ui.composables.Screen
+import com.samuelav.commonandroid.ui.composables.base.Heading1
+import com.samuelav.commonandroid.ui.composables.base.Screen
 import com.samuelav.commonandroid.ui.theme.AppTheme.colors
 import com.samuelav.commonandroid.ui.theme.AppTheme.icons
 import com.samuelav.features.home.ui.homeNavigation

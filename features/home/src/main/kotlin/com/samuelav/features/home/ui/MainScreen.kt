@@ -8,8 +8,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.samuelav.commonandroid.app.AppState
-import com.samuelav.commonandroid.ui.composables.Heading1
-import com.samuelav.commonandroid.ui.composables.Screen
+import com.samuelav.commonandroid.ui.composables.base.Heading1
+import com.samuelav.commonandroid.ui.composables.base.Screen
 import com.samuelav.features.home.R
 
 @Composable

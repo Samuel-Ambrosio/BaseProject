@@ -13,6 +13,10 @@ sealed class Dependencies {
         const val compose = "io.insert-koin:koin-androidx-compose:${Versions.Koin.android}"
     }
 
+    object Android {
+        const val desugarJdkLibs = "com.android.tools:desugar_jdk_libs:${Versions.Android.desugarJdkLibs}"
+    }
+
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:${Versions.AndroidX.coreKtx}"
         const val appCompat = "androidx.appcompat:appcompat:${Versions.AndroidX.appCompat}"
@@ -23,13 +27,13 @@ sealed class Dependencies {
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidX.lifecycleExtensions}"
 
         const val composeUi = "androidx.compose.ui:ui:${Versions.AndroidX.compose}"
-        const val composeUiTooling = "androidx.compose.ui:ui-tooling-preview:${Versions.AndroidX.compose}"
-        const val debugComposeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.AndroidX.compose}"
+        const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.AndroidX.compose}"
+        const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.AndroidX.compose}"
         const val composeMaterial = "androidx.compose.material:material:${Versions.AndroidX.compose}"
         const val composeFoundation = "androidx.compose.foundation:foundation:${Versions.AndroidX.compose}"
         const val composeIconsCore = "androidx.compose.material:material-icons-core:${Versions.AndroidX.compose}"
         const val composeIconsExtended = "androidx.compose.material:material-icons-extended:${Versions.AndroidX.compose}"
-        const val composeRuntimeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.AndroidX.compose}"
+        const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.AndroidX.compose}"
 
         const val composeActivity = "androidx.activity:activity-compose:${Versions.AndroidX.composeActivity}"
         const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.AndroidX.composeNavigation}"

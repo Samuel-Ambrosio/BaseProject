@@ -1,4 +1,4 @@
-package com.samuelav.common
+package com.samuelav.common.utils
 
 sealed class Error {
     object NoContent: Error()
@@ -10,6 +10,7 @@ sealed class Error {
     object BadGateway: Error()
     object ServiceUnavailable: Error()
 
+    object JsonSyntax: Error()
     object Network: Error()
     object Unknown: Error()
 }

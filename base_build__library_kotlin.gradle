@@ -4,7 +4,7 @@ apply plugin: Plugins.javaLibrary
 apply plugin: Plugins.kotlin
 apply from: "$rootDir/base_build__common.gradle"
 
-java {
+kotlin {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }

@@ -57,6 +57,7 @@ android {
     }
 
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -64,6 +65,7 @@ android {
     kotlinOptions {
         jvmTarget = AppConfig.kotlinJvmTarget
         useIR = true
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 
     packagingOptions {
@@ -89,5 +91,7 @@ dependencies {
     testImplementation Dependencies.Test.junit
     androidTestImplementation Dependencies.Test.androidJunit
     androidTestImplementation Dependencies.Test.androidEspresso
-    debugImplementation Dependencies.AndroidX.debugComposeUiTooling
+
+    implementation Dependencies.AndroidX.composeRuntime
+    coreLibraryDesugaring Dependencies.Android.desugarJdkLibs
 }

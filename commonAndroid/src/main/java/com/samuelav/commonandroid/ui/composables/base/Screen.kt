@@ -1,4 +1,4 @@
-package com.samuelav.commonandroid.ui.composables
+package com.samuelav.commonandroid.ui.composables.base
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.runtime.Composable
@@ -12,6 +12,7 @@ import com.samuelav.commonandroid.app.configuration.screen.ScreenConfig
 fun Screen(
     appState: AppState,
     titleTopBar: String = "",
+    titleTopBarContent: (@Composable RowScope.() -> Unit)? = null,
     isTopBarVisible: Boolean = true,
     isBottomNavigationBarVisible: Boolean = true,
     onBackClick: (() -> Unit)? = null,
@@ -27,6 +28,7 @@ fun Screen(
                 appTopBarScreenConfig =
                     AppTopBarScreenConfig(
                         title = titleTopBar,
+                        titleContent = titleTopBarContent,
                         isVisible = isTopBarVisible,
                         onBackClick = onBackClick,
                         actions = topBarActions),
