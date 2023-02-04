@@ -9,4 +9,6 @@ object Plugins {
     const val javaLibrary = "java-library"
     const val gradleVersionsPlugin = "com.github.ben-manes.versions"
     const val gradleDependencyGraphGenerator = "com.vanniktech.dependency.graph.generator"
+    const val googleServices = "com.google.gms.google-services"
+    const val crashlytics = "com.google.firebase.crashlytics"
 }

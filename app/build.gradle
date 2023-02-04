@@ -1,32 +1,37 @@
 import com.samuelav.buildsrc.AppConfig
 import com.samuelav.buildsrc.dependencies.Dependencies
 import com.samuelav.buildsrc.dependencies.Modules
+import com.samuelav.buildsrc.dependencies.Namespaces
 import com.samuelav.buildsrc.dependencies.Plugins
 
 apply plugin: Plugins.androidApplication
+// TODO: Remove '//' after google-services.json file is added
+//apply plugin: Plugins.googleServices
+//apply plugin: Plugins.crashlytics
 apply from: "$rootDir/base_build__android_compose.gradle"
 
 android {
+    namespace Namespaces.App
+
     defaultConfig {
         applicationId AppConfig.applicationId
     }
 }
 
 dependencies {
-    implementation project(Modules.common)
-    implementation project(Modules.commonAndroid)
+    implementation project(Modules.Data.Local)
+    implementation project(Modules.Data.Remote)
+    implementation project(Modules.Data.RepositoryImpl)
+    implementation project(Modules.Data.Source)
 
-    implementation project(Modules.analytics)
+    implementation project(Modules.Domain.Model)
+    implementation project(Modules.Domain.Repository)
+    implementation project(Modules.Domain.UseCase)
 
-    implementation project(Modules.dataSource)
-    implementation project(Modules.dataModel)
-    implementation project(Modules.dataRepository)
-    implementation project(Modules.dataLocal)
-    implementation project(Modules.dataRemote)
-
-    implementation project(Modules.domain)
-
-    implementation project(Modules.featuresHome)
+    implementation project(Modules.Presentation.Analytics)
+    implementation project(Modules.Presentation.Common)
+    implementation project(Modules.Presentation.Features.Advert)
+    implementation project(Modules.Presentation.Features.Home)
 
     implementation Dependencies.AndroidX.splashScreen
 }

@@ -1,10 +1,9 @@
+import com.samuelav.buildsrc.AppConfig
+import com.samuelav.buildsrc.dependencies.Dependencies
 import com.samuelav.buildsrc.dependencies.Plugins
 import com.samuelav.buildsrc.dependencies.Versions
-import com.samuelav.buildsrc.dependencies.Dependencies
-import com.samuelav.buildsrc.AppConfig
 
 apply plugin: Plugins.kotlinAndroid
-apply plugin: Plugins.kotlinKapt
 apply from: "$rootDir/base_build__common.gradle"
 
 android {
@@ -50,21 +49,21 @@ android {
 
     buildFeatures {
         compose true
+        buildConfig true
     }
 
    composeOptions {
-        kotlinCompilerExtensionVersion Versions.AndroidX.compose
+        kotlinCompilerExtensionVersion Versions.AndroidX.composeCompiler
     }
 
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
         jvmTarget = AppConfig.kotlinJvmTarget
-        useIR = true
         freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 
@@ -79,19 +78,19 @@ dependencies {
     implementation Dependencies.AndroidX.coreKtx
     implementation Dependencies.AndroidX.appCompat
 
-    implementation Dependencies.AndroidX.lifecycleRuntime
-    implementation Dependencies.AndroidX.lifecycleViewmodel
-    implementation Dependencies.AndroidX.lifecycleExtensions
-    implementation Dependencies.AndroidX.lifecycleLivedata
-
     implementation Dependencies.Google.material
 
-    implementation Dependencies.Koin.android
+    implementation platform(Dependencies.Google.firebaseBoM)
+    implementation Dependencies.Google.firebaseCrashlytics
+
+    // TODO: Remove '//' after google-services.json file and ad id are added
+    //implementation Dependencies.Google.playServicesAds
+
+    implementation platform(Dependencies.AndroidX.composeBoM)
+    implementation Dependencies.AndroidX.composeRuntime
+    coreLibraryDesugaring Dependencies.Android.desugarJdkLibs
 
     testImplementation Dependencies.Test.junit
     androidTestImplementation Dependencies.Test.androidJunit
     androidTestImplementation Dependencies.Test.androidEspresso
-
-    implementation Dependencies.AndroidX.composeRuntime
-    coreLibraryDesugaring Dependencies.Android.desugarJdkLibs
 }

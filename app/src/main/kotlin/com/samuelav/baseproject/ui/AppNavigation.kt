@@ -1,41 +1,47 @@
 package com.samuelav.baseproject.ui
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme.shapes
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Snackbar
 import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.samuelav.commonandroid.app.AppState
-import com.samuelav.commonandroid.app.rememberAppState
-import com.samuelav.commonandroid.extensions.isAppBottomNavigationBarVisible
-import com.samuelav.commonandroid.extensions.isAppTopBarVisible
-import com.samuelav.commonandroid.ui.theme.AppTheme.colors
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.samuelav.presentation.common.app.AppState
+import com.samuelav.presentation.common.app.rememberAppState
+import com.samuelav.presentation.common.ui.theme.AppTheme.animations
+import com.samuelav.presentation.common.ui.theme.AppTheme.colors
+import com.samuelav.presentation.features.advert.AdvertBanner
 
 @Composable
-fun AppNavigation(
-    appState: AppState = rememberAppState()
-) {
+fun AppNavigation(appState: AppState = rememberAppState()) {
+    val screenConfig by appState.screenConfig.collectAsStateWithLifecycle()
+
     Scaffold(
         scaffoldState = appState.scaffoldState,
         topBar = {
             AnimatedVisibility(
-                visible = appState.isAppTopBarVisible(),
-                enter = slideInVertically(animationSpec = tween()) { -it },
-                exit = slideOutVertically(animationSpec = tween()) { -it }) {
-                AppTopBar(appState = appState)
+                visible = screenConfig.appTopBarScreenConfig.isVisible,
+                enter = animations.slideInVerticallyFromTop,
+                exit = animations.slideOutVerticallyFromBottom,
+            ) {
+                AppTopBar(
+                    appState = appState,
+                    appTopBarScreenConfig = screenConfig.appTopBarScreenConfig,
+                )
             }
          },
         bottomBar = {
             AnimatedVisibility(
-                visible = appState.isAppBottomNavigationBarVisible(),
-                enter = slideInVertically(animationSpec = tween()) { it },
-                exit = slideOutVertically(animationSpec = tween()) { it }) {
+                visible = screenConfig.appBottomNavigationBarScreenConfig.isVisible,
+                enter = animations.slideInVerticallyFromBottom,
+                exit = animations.slideOutVerticallyFromTop,
+            ) {
                 AppBottomNavigationBar(appState = appState)
             }
         },
@@ -44,12 +50,19 @@ fun AppNavigation(
                 Snackbar(
                     snackbarData = data,
                     shape = shapes.medium,
-                    backgroundColor = colors.primary
+                    backgroundColor = colors.primary,
                 )
             }
         },
         content = { innerPadding ->
-            AppNavHost(appState = appState, modifier = Modifier.padding(paddingValues = innerPadding))
+            Column(modifier = Modifier.padding(paddingValues = innerPadding)) {
+                AppNavHost(
+                    modifier = Modifier.weight(1f),
+                    appState = appState,
+                )
+
+                AdvertBanner(modifier = Modifier.fillMaxWidth())
+            }
         }
     )
 }

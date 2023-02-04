@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="celticBlueLight">#FF335FD1</color>
+    <color name="blueberry">#FF4F7FFA</color>
+    <color name="azureWhite">#FFD2DFFF</color>
+
+    <color name="lotion">#FFFBFBFB</color>
+    <color name="eerieBlack">#FF201D1D</color>
+    <color name="raisinBlack">#FF242222</color>
+
+    <color name="celticBlue">#FF2365C7</color>
+    <color name="americanGreen">#FF49B336</color>
+    <color name="chromeYellow">#FFFFAB00</color>
+    <color name="darkPastelRed">#FFBA381B</color>
+    <color name="frenchSkyBlue">#FF85A1FF</color>
+    <color name="pastelGreen">#FF7ADB69</color>
+    <color name="buffYellow">#FFF9D48A</color>
+    <color name="melonRed">#FFFFB9A9</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

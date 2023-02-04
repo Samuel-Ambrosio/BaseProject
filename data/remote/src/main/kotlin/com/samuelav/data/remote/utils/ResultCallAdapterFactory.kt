@@ -1,14 +1,17 @@
 package com.samuelav.data.remote.utils
 
-import com.samuelav.common.utils.Error
-import com.samuelav.common.utils.Result
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.samuelav.domain.model.utils.Error
+import com.samuelav.domain.model.utils.Result
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
-class ResultCallAdapterFactory : CallAdapter.Factory() {
+class ResultCallAdapterFactory(
+    private val firebaseCrashlytics: FirebaseCrashlytics
+) : CallAdapter.Factory() {
 
     override fun get(
         returnType: Type,
@@ -28,10 +31,10 @@ class ResultCallAdapterFactory : CallAdapter.Factory() {
 
         val successBodyType = containerType.getBodyType()
         val errorBodyConverter =
-            retrofit.nextResponseBodyConverter<Error>(null, Error::class.java, annotations)
+            retrofit.nextResponseBodyConverter<Error.Api>(null, Error.Api::class.java, annotations)
 
         return when (getRawType(returnType)) {
-            Call::class.java -> ResultCallAdapter<Any>(successBodyType, errorBodyConverter)
+            Call::class.java -> ResultCallAdapter<Any>(successBodyType, errorBodyConverter, firebaseCrashlytics)
             else -> null
         }
     }

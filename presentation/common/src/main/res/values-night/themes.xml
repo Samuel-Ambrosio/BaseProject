@@ -1,0 +1,21 @@
+<resources>
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blueberry</item>
+        <item name="colorPrimaryVariant">@color/celticBlueLight</item>
+        <item name="colorSecondary">@color/azureWhite</item>
+        <item name="colorSecondaryVariant">@color/azureWhite</item>
+
+        <item name="android:colorBackground">@color/eerieBlack</item>
+        <item name="colorSurface">@color/raisinBlack</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+
+        <item name="colorInfo">@color/frenchSkyBlue</item>
+        <item name="colorSuccess">@color/pastelGreen</item>
+        <item name="colorWarning">@color/buffYellow</item>
+        <item name="colorError">@color/melonRed</item>
+    </style>
+</resources>
