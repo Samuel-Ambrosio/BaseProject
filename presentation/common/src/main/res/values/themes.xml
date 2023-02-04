@@ -1,0 +1,21 @@
+<resources>
+    <style name="BaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/celticBlueLight</item>
+        <item name="colorPrimaryVariant">@color/blueberry</item>
+        <item name="colorSecondary">@color/azureWhite</item>
+        <item name="colorSecondaryVariant">@color/azureWhite</item>
+
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/lotion</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+
+        <item name="colorInfo">@color/celticBlue</item>
+        <item name="colorSuccess">@color/americanGreen</item>
+        <item name="colorWarning">@color/chromeYellow</item>
+        <item name="colorError">@color/darkPastelRed</item>
+    </style>
+</resources>

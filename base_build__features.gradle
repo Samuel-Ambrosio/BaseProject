@@ -5,8 +5,8 @@ apply plugin: Plugins.androidLibrary
 apply from: "$rootDir/base_build__android_compose.gradle"
 
 dependencies {
-    implementation project(Modules.common)
-    implementation project(Modules.commonAndroid)
-    implementation project(Modules.dataModel)
-    implementation project(Modules.domain)
+    implementation project(Modules.domainModel)
+    implementation project(Modules.domainUseCase)
+    implementation project(Modules.presentationAnalytics)
+    implementation project(Modules.presentationCommon)
 }

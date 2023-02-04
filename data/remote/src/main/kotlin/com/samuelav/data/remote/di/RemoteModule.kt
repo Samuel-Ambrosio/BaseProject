@@ -1,7 +1,7 @@
 package com.samuelav.data.remote.di
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.gson.*
 import com.samuelav.data.remote.BuildConfig
 import com.samuelav.data.remote.BuildConfig.API_BASE_PATH
 import com.samuelav.data.remote.utils.ResultCallAdapterFactory
@@ -11,12 +11,17 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 val remoteModule = module {
     single { interceptorProvider() }
     single { okHttpClientProvider(get()) }
     single { gsonProvider() }
-    single { retrofitProvider(get(), get()) }
+    single { FirebaseCrashlytics.getInstance() }
+    single { ResultCallAdapterFactory(get()) }
+    single { retrofitProvider(get(), get(), get()) }
 }
 
 /**
@@ -34,13 +39,26 @@ private fun okHttpClientProvider(interceptor: Interceptor) =
 
 private fun gsonProvider() =
     GsonBuilder()
-        .setDateFormat("dd/MM/yyyy hh:mm")
-        .create()
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        .registerTypeAdapter(
+            LocalDateTime::class.java,
+            object : JsonDeserializer<LocalDateTime> {
+                override fun deserialize(
+                    json: JsonElement?,
+                    typeOfT: Type?,
+                    context: JsonDeserializationContext?
+                ) = ZonedDateTime.parse(json?.asJsonPrimitive?.asString).toLocalDateTime()
+            }
+        ).create()
 
-private fun retrofitProvider(okHttpClient: OkHttpClient, gson: Gson) =
+private fun retrofitProvider(
+    okHttpClient: OkHttpClient,
+    gson: Gson,
+    resultCallAdapterFactory: ResultCallAdapterFactory
+) =
     Retrofit.Builder()
         .client(okHttpClient)
         .baseUrl(API_BASE_PATH)
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .addCallAdapterFactory(ResultCallAdapterFactory())
+        .addCallAdapterFactory(resultCallAdapterFactory)
         .build()

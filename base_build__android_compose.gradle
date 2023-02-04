@@ -3,13 +3,13 @@ import com.samuelav.buildsrc.dependencies.Dependencies
 apply from: "$rootDir/base_build__android.gradle"
 
 dependencies {
+    implementation Dependencies.AndroidX.lifecycleCompose
+
+    implementation platform(Dependencies.AndroidX.composeBoM)
     implementation Dependencies.AndroidX.composeUi
     implementation Dependencies.AndroidX.composeMaterial
     implementation Dependencies.AndroidX.composeFoundation
-    implementation Dependencies.AndroidX.composeIconsCore
-    implementation Dependencies.AndroidX.composeIconsExtended
 
-    implementation Dependencies.AndroidX.composeActivity
     implementation Dependencies.AndroidX.composeNavigation
     implementation Dependencies.AndroidX.composeConstraint
 
@@ -23,5 +23,7 @@ dependencies {
 
     implementation Dependencies.AndroidX.composeUiToolingPreview
     debugImplementation Dependencies.AndroidX.composeUiTooling
+
+    androidTestImplementation platform(Dependencies.AndroidX.composeBoM)
     androidTestImplementation Dependencies.Test.androidJunitCompose
 }

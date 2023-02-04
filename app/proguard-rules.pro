@@ -20,7 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.samuelav.data.model.** { *; }
+-keep class com.samuelav.domain.model.** { *; }
+-keep class com.samuelav.data.remote.** { *; }
 -dontwarn retrofit.**
 -keep class retrofit.** { *; }
 -keepattributes Signature

@@ -1,0 +1,24 @@
+<resources>
+    <string name="ad_id_banner" translatable="false"></string>
+    <string name="app_email_contact" translatable="false"></string>
+    <string name="app_name" translatable="false">BaseProject</string>
+    <string name="app_share_link" translatable="false"></string>
+    <string name="developed_by">Developed by Samuel A.V.</string>
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_more">More</string>
+    <string name="nav_item_search">Search</string>
+    <string name="result_error_bad_gateway">Service unreachable. Please try again later.</string>
+    <string name="result_error_bad_request">Service unavailable. Please try again later.</string>
+    <string name="result_error_balance">Error loading generation data.\nTap or swipe to refresh.</string>
+    <string name="result_error_exchanges">Error loading exchanges data.\nTap or swipe to refresh.</string>
+    <string name="result_error_forbidden">Service unavailable. Please try again later.</string>
+    <string name="result_error_market_prices">Error loading market prices data.\nTap or swipe to refresh.</string>
+    <string name="result_error_network">Network unavailable.</string>
+    <string name="result_error_no_content">No content found.</string>
+    <string name="result_error_not_found">Service unavailable. Please try again later.</string>
+    <string name="result_error_open_mail_app">Error opening mail app.</string>
+    <string name="result_error_server">Service unavailable. Please try again later.</string>
+    <string name="result_error_service_unavailable">Service unavailable.</string>
+    <string name="result_error_timeout">Service unavailable. Please try again later.</string>
+    <string name="result_error_unknown">Something went wrong. Please try again later.</string>
+</resources>

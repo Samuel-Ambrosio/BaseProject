@@ -15,7 +15,7 @@ class Converters {
         LocalDateTime.ofInstant(Instant.ofEpochSecond(it), ZoneId.systemDefault())
     }
     @TypeConverter
-    fun localDateTimeToTimestamp(date: LocalDateTime?): Long? = date?.toEpochSecond(ZoneOffset.UTC)
+    fun localDateTimeToTimestamp(date: LocalDateTime?): Long? = date?.atZone(ZoneId.systemDefault())?.toEpochSecond()
 
     @TypeConverter
     fun longListToJson(list: List<Long>?): String = Gson().toJson(list)

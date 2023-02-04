@@ -1,0 +1,7 @@
+import com.samuelav.buildsrc.dependencies.Dependencies
+
+apply from: "$rootDir/base_build__library_android_compose.gradle"
+
+dependencies {
+    implementation Dependencies.Google.firebaseAnalytics
+}
