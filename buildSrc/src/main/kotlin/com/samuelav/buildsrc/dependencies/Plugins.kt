@@ -5,6 +5,7 @@ object Plugins {
     const val kotlinAndroid = "kotlin-android"
     const val kotlin = "kotlin"
     const val kotlinKapt = "kotlin-kapt"
+    const val compose = "org.jetbrains.kotlin.plugin.compose"
     const val androidLibrary = "com.android.library"
     const val javaLibrary = "java-library"
     const val gradleVersionsPlugin = "com.github.ben-manes.versions"

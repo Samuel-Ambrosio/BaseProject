@@ -9,7 +9,7 @@ sealed class Dependencies {
 
     object Koin {
         const val core = "io.insert-koin:koin-core:${Versions.Koin.core}"
-        const val compose = "io.insert-koin:koin-androidx-compose:${Versions.Koin.compose}"
+        const val compose = "io.insert-koin:koin-androidx-compose:${Versions.Koin.core}"
     }
 
     object Android {

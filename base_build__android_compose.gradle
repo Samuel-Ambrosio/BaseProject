@@ -1,6 +1,14 @@
 import com.samuelav.buildsrc.dependencies.Dependencies
+import com.samuelav.buildsrc.dependencies.Plugins
 
 apply from: "$rootDir/base_build__android.gradle"
+apply plugin: Plugins.compose
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
 
 dependencies {
     implementation Dependencies.AndroidX.lifecycleCompose
