@@ -4,8 +4,10 @@ object Namespaces {
     const val App = "com.samuelav.baseproject"
 
     object Data {
-        const val Local = "com.samuelav.data.local"
-        const val Remote = "com.samuelav.data.remote"
+        object SourcesImpl {
+            const val Local = "com.samuelav.data.sourcesImpl.local"
+            const val Remote = "com.samuelav.data.sourcesImpl.remote"
+        }
     }
 
     object Presentation {

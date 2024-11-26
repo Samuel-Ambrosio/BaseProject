@@ -4,10 +4,13 @@ object Modules {
     const val app = ":app"
 
     object Data {
-        const val Source = ":data:source"
-        const val Remote = ":data:remote"
-        const val Local = ":data:local"
         const val RepositoryImpl = ":data:repositoryImpl"
+        const val Sources = ":data:sources"
+
+        object SourcesImpl {
+            const val Local = ":data:sourcesImpl:local"
+            const val Remote = ":data:sourcesImpl:remote"
+        }
     }
 
     object Domain {

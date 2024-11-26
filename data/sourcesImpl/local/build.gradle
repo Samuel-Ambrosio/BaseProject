@@ -1,0 +1,23 @@
+import com.samuelav.buildsrc.dependencies.Dependencies
+import com.samuelav.buildsrc.dependencies.Modules
+import com.samuelav.buildsrc.dependencies.Namespaces
+import com.samuelav.buildsrc.dependencies.Plugins
+
+apply from: "$rootDir/base_build__library_android.gradle"
+apply plugin: Plugins.kotlinKapt
+
+android {
+    namespace Namespaces.Data.SourcesImpl.Local
+}
+
+dependencies {
+    implementation project(Modules.Domain.Model)
+    implementation project(Modules.Data.Sources)
+
+    implementation Dependencies.AndroidX.roomCoreRuntime
+    implementation Dependencies.AndroidX.roomCoreKtx
+    kapt Dependencies.AndroidX.roomCompiler
+
+    implementation Dependencies.AndroidX.dataStore
+    implementation Dependencies.Google.gson
+}

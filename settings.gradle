@@ -1,9 +1,9 @@
 rootProject.name = "BaseProject"
 include ':app'
-include ':data:source'
-include ':data:remote'
-include ':data:local'
 include ':data:repositoryImpl'
+include ':data:sources'
+include ':data:sourcesImpl:remote'
+include ':data:sourcesImpl:local'
 include ':domain:model'
 include ':domain:repository'
 include ':domain:useCase'
