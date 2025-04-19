@@ -1,11 +1,11 @@
 package com.samuelav.data.sourcesImpl.remote.utils
 
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.JsonSyntaxException
 import com.samuelav.domain.model.extensions.isNotNull
 import com.samuelav.domain.model.extensions.isNull
 import com.samuelav.domain.model.utils.Error
 import com.samuelav.domain.model.utils.Result
+import com.samuelav.domain.model.utils.debug.AppLogger
 import okhttp3.Request
 import okhttp3.ResponseBody
 import okio.EOFException
@@ -20,7 +20,6 @@ import java.time.format.DateTimeParseException
 internal class ResultResponseCall<S : Any>(
     private val call: Call<S>,
     private val errorConverter: Converter<ResponseBody, Error.Api>,
-    private val firebaseCrashlytics: FirebaseCrashlytics
 ): Call<Result<Error, S>> {
     override fun enqueue(callback: Callback<Result<Error, S>>) {
         synchronized(this) {
@@ -55,7 +54,7 @@ internal class ResultResponseCall<S : Any>(
                                 else -> Error.Network
                             }
 
-                        firebaseCrashlytics.recordException(t)
+                        AppLogger.e(t, "Error: $error")
 
                         callback.onResponse(
                             this@ResultResponseCall,
@@ -68,7 +67,7 @@ internal class ResultResponseCall<S : Any>(
     }
 
     override fun isExecuted(): Boolean = synchronized(this) { call.isExecuted }
-    override fun clone(): Call<Result<Error, S>> = ResultResponseCall(call.clone(), errorConverter, firebaseCrashlytics)
+    override fun clone(): Call<Result<Error, S>> = ResultResponseCall(call.clone(), errorConverter)
     override fun isCanceled(): Boolean  = synchronized(this) { call.isCanceled }
     override fun cancel() = synchronized(this) { call.cancel() }
     override fun execute(): Response<Result<Error, S>> =

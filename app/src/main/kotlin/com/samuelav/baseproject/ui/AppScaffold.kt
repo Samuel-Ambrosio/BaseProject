@@ -19,10 +19,14 @@ import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.features.advert.AdvertBanner
 
 @Composable
-fun AppNavigation(appState: AppState = rememberAppState()) {
+fun AppScaffold(
+    modifier: Modifier,
+    appState: AppState = rememberAppState(),
+) {
     val screenConfig by appState.screenConfig.collectAsStateWithLifecycle()
 
     Scaffold(
+        modifier = modifier,
         scaffoldState = appState.scaffoldState,
         topBar = {
             AnimatedVisibility(

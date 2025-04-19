@@ -2,8 +2,12 @@ package com.samuelav.baseproject.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.samuelav.baseproject.ui.AppNavigation
+import com.samuelav.baseproject.ui.AppScaffold
 import com.samuelav.presentation.common.extensions.setAppThemeContent
 
 class MainActivity : ComponentActivity() {
@@ -14,6 +18,13 @@ class MainActivity : ComponentActivity() {
         //MobileAds.initialize(this)
 
         installSplashScreen()
-        setAppThemeContent { AppNavigation() }
+        setAppThemeContent {
+            AppScaffold(
+                modifier =
+                    Modifier.fillMaxSize()
+                            .statusBarsPadding()
+                            .navigationBarsPadding(),
+            )
+        }
     }
 }

@@ -42,6 +42,10 @@ sealed class Dependencies {
         const val dataStore = "androidx.datastore:datastore-preferences:${Versions.AndroidX.dataStore}"
     }
 
+    object Debug {
+        const val timber = "com.jakewharton.timber:timber:${Versions.Debug.timber}"
+    }
+
     object Google {
         const val accompanistNavigationAnimation = "com.google.accompanist:accompanist-navigation-animation:${Versions.Google.accompanist}"
         const val accompanistPermissions = "com.google.accompanist:accompanist-permissions:${Versions.Google.accompanist}"

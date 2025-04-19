@@ -42,9 +42,13 @@ fun rememberAppState(
                     ScreenConfig(
                         appTopBarScreenConfig =
                             AppTopBarScreenConfig(
-                                isVisible = appConfiguration.initialTopBarVisibility),
+                                isVisible = appConfiguration.initialTopBarVisibility,
+                            ),
                         appBottomNavigationBarScreenConfig =
                             AppBottomNavigationBarScreenConfig(
-                                isVisible = appConfiguration.initialBottomBarVisibility)))
+                                isVisible = appConfiguration.initialBottomBarVisibility,
+                            ),
+                    ),
+                )
         )
     }

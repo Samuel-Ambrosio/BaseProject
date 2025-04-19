@@ -8,7 +8,6 @@ apply from: "$rootDir/base_build__common.gradle"
 
 android {
     compileSdkVersion AppConfig.compileSdkVersion
-    buildToolsVersion AppConfig.buildToolsVersion
     flavorDimensions "default"
 
     defaultConfig {

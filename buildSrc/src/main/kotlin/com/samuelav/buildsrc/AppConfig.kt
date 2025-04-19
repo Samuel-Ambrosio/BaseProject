@@ -9,6 +9,5 @@ object AppConfig {
     const val minSdkVersion = 26
     const val kotlinJvmTarget = "21"
 
-    const val buildToolsVersion = "34.0.0"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }

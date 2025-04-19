@@ -34,4 +34,5 @@ dependencies {
     implementation project(Modules.Presentation.Features.Home)
 
     implementation Dependencies.AndroidX.splashScreen
+    implementation Dependencies.Debug.timber
 }
