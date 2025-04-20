@@ -1,7 +1,0 @@
-import com.samuelav.buildsrc.dependencies.Namespaces
-
-apply from: "$rootDir/base_build__features.gradle"
-
-android {
-    namespace Namespaces.Presentation.Features.Advert
-}

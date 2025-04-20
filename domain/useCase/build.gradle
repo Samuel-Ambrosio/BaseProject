@@ -1,8 +1,0 @@
-import com.samuelav.buildsrc.dependencies.Modules
-
-apply from:"$rootDir/base_build__library_kotlin.gradle"
-
-dependencies {
-    implementation project(Modules.Domain.Model)
-    implementation project(Modules.Domain.Repository)
-}

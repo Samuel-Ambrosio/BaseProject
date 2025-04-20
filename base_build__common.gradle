@@ -1,7 +1,0 @@
-import com.samuelav.buildsrc.dependencies.Dependencies
-
-dependencies {
-    implementation Dependencies.Kotlin.stdlib
-    implementation Dependencies.Kotlin.coroutines
-    implementation Dependencies.Koin.core
-}

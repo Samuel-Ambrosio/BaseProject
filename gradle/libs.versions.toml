@@ -1,0 +1,121 @@
+[versions]
+#Gradle
+androidGradlePlugin = "8.9.1"
+versionsGradlePlugin = "0.52.0"
+graphGeneratorGradlePlugin = "0.8.0"
+crashlyticsGradlePlugin = "3.0.3"
+
+#Kotlin
+kotlinCore = "2.1.20"
+kotlinCoroutines = "1.10.2"
+ksp = "2.1.20-2.0.0"
+
+#Android
+desugarJdkLibs = "2.1.5"
+
+#AndroidX
+coreKtx = "1.16.0"
+appCompat = "1.7.0"
+lifecycle = "2.8.7"
+compose = "2025.04.00"
+composeCompiler = "1.5.15"
+composeNavigation = "2.8.9"
+composeConstraint = "1.1.1"
+splashScreen = "1.0.1"
+room = "2.7.0"
+dataStore = "1.1.4"
+
+#Debug
+timber = "5.0.1"
+
+#Google
+accompanist = "0.36.0"
+material = "1.12.0"
+gson = "2.13.0"
+services = "4.4.2"
+servicesAds = "24.2.0"
+firebase = "33.12.0"
+
+#Other
+koinCore = "4.0.4"
+retrofitCore = "2.11.0"
+okHttp3Interceptor = "4.12.0"
+
+#Test
+junit = "4.13.2"
+androidJunit = "1.2.1"
+androidEspresso = "3.6.1"
+
+[libraries]
+#Dependencies
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinCore" }
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinCore" }
+
+android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material"}
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
+androidx-compose-constraint = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "composeConstraint" }
+androidx-splash-screen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
+androidx-room-core-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-core-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
+
+debug-timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+
+google-accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanist" }
+google-accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
+google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+google-accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
+google-accompanist-placeholder = { group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanist" }
+google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+google-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "servicesAds" }
+
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitCore" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitCore" }
+
+okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp3Interceptor" }
+
+test-junit = { group = "junit", name = "junit", version.ref = "junit" }
+test-android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidJunit" }
+test-android-junit-compose = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+test-android-ui-compose = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+test-android-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidEspresso" }
+
+#Plugins
+androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinCore" }
+composeCompilerGradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlinCore" }
+googleServicesGradlePlugin = { group = "com.google.gms", name = "google-services", version.ref = "services" }
+crashlyticsGradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "crashlyticsGradlePlugin" }
+checkVersionsGradlePlugin = { group = "com.github.ben-manes", name = "gradle-versions-plugin", version.ref = "versionsGradlePlugin" }
+dependencyGraphGeneratorGradlePlugin = { group = "com.vanniktech", name = "gradle-dependency-graph-generator-plugin", version.ref = "graphGeneratorGradlePlugin" }
+
+[plugins]
+androidApplication = { id = "com.android.application" }
+androidLibrary = { id = "com.android.library" }
+kotlin = { id = "kotlin" }
+kotlinAndroid = { id = "kotlin-android" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+compose = { id = "org.jetbrains.kotlin.plugin.compose" }
+googleServices = { id = "com.google.gms.google-services" }
+crashlytics = { id = "com.google.firebase.crashlytics" }
+checkVersions = { id = "com.github.ben-manes.versions" }
+dependencyGraphGenerator = { id = "com.vanniktech.dependency.graph.generator" }
