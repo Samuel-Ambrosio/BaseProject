@@ -8,6 +8,7 @@ crashlyticsGradlePlugin = "3.0.3"
 #Kotlin
 kotlinCore = "2.1.20"
 kotlinCoroutines = "1.10.2"
+kotlinSerializationCore = "1.9.0"
 ksp = "2.1.20-2.0.0"
 
 #Android
@@ -20,6 +21,8 @@ lifecycle = "2.8.7"
 compose = "2025.04.00"
 composeCompiler = "1.5.15"
 composeNavigation = "2.8.9"
+composeNavigation3 = "1.1.2"
+composeNavigation3ViewModel = "2.10.0"
 composeConstraint = "1.1.1"
 splashScreen = "1.0.1"
 room = "2.7.0"
@@ -50,6 +53,7 @@ androidEspresso = "3.6.1"
 #Dependencies
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinCore" }
 kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+kotlin-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinSerializationCore" }
 
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinCore" }
@@ -59,6 +63,8 @@ android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_li
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-navigation3 = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-navigation3", version.ref = "composeNavigation3ViewModel" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
@@ -67,6 +73,8 @@ androidx-compose-material = { group = "androidx.compose.material", name = "mater
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
 androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
+androidx-compose-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "composeNavigation3" }
+androidx-compose-navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "composeNavigation3" }
 androidx-compose-constraint = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "composeConstraint" }
 androidx-splash-screen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
 androidx-room-core-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -102,6 +110,7 @@ test-android-espresso = { group = "androidx.test.espresso", name = "espresso-cor
 #Plugins
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinCore" }
+kotlinSerializationGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlinCore" }
 composeCompilerGradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlinCore" }
 googleServicesGradlePlugin = { group = "com.google.gms", name = "google-services", version.ref = "services" }
 crashlyticsGradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "crashlyticsGradlePlugin" }
@@ -113,6 +122,7 @@ androidApplication = { id = "com.android.application" }
 androidLibrary = { id = "com.android.library" }
 kotlin = { id = "kotlin" }
 kotlinAndroid = { id = "kotlin-android" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose = { id = "org.jetbrains.kotlin.plugin.compose" }
 googleServices = { id = "com.google.gms.google-services" }

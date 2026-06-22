@@ -4,12 +4,10 @@ import com.samuelav.buildsrc.plugins.extensions.debugImplementation
 import com.samuelav.buildsrc.plugins.extensions.implementation
 import org.gradle.accessors.dm.LibrariesForLibs
 
-plugins {
-    id("KotlinAndroidBase")
-    id("org.jetbrains.kotlin.plugin.compose")
-}
-
 val libs = the<LibrariesForLibs>()
+
+apply(plugin = libs.plugins.compose.get().pluginId)
+apply<KotlinAndroidBasePlugin>()
 
 android {
     buildFeatures.apply { compose = true }
@@ -21,6 +19,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.lifecycle.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
@@ -28,6 +27,8 @@ dependencies {
     implementation(libs.androidx.compose.foundation)
 
     implementation(libs.androidx.compose.navigation)
+    implementation(libs.androidx.compose.navigation3.runtime)
+    implementation(libs.androidx.compose.navigation3.ui)
     implementation(libs.androidx.compose.constraint)
 
     implementation(libs.koin.compose)

@@ -1,0 +1,4 @@
+package com.samuelav.presentation.common.app.navigation
+
+interface AppNavKey {
+}

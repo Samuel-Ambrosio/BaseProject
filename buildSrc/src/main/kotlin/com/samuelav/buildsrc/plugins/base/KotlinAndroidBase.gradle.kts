@@ -6,13 +6,12 @@ import com.samuelav.buildsrc.plugins.extensions.implementation
 import com.samuelav.buildsrc.plugins.extensions.testImplementation
 import org.gradle.accessors.dm.LibrariesForLibs
 
-plugins {
-    id("kotlin-android")
-}
+val libs = the<LibrariesForLibs>()
+
+apply(plugin = libs.plugins.kotlinAndroid.get().pluginId)
 
 android {
     compileSdkVersion(AppConfig.compileSdkVersion)
-    flavorDimensions("default")
 
     defaultConfig {
         versionCode = AppConfig.versionCode
@@ -26,14 +25,18 @@ android {
         }
     }
 
+    flavorDimensions("environment")
     productFlavors {
         create("dev") {
+            dimension = "environment"
             buildConfigField("String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\"")
         }
         create("pre") {
+            dimension = "environment"
             buildConfigField("String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\"")
         }
         create("pro") {
+            dimension = "environment"
             buildConfigField("String", "API_BASE_PATH", "\"https://jsonplaceholder.typicode.com/\"")
         }
     }
@@ -67,8 +70,6 @@ android {
     }
 }
 
-val libs = the<LibrariesForLibs>()
-
 dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlin.coroutines)
@@ -76,6 +77,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.lifecycle.viewmodel)
 
     implementation(libs.google.material)
 

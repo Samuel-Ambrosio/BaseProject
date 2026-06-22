@@ -14,6 +14,7 @@ dependencies {
 
     implementation(libs.androidGradlePlugin)
     implementation(libs.kotlinGradlePlugin)
+    implementation(libs.kotlinSerializationGradlePlugin)
     implementation(libs.composeCompilerGradlePlugin)
     implementation(libs.googleServicesGradlePlugin)
     implementation(libs.crashlyticsGradlePlugin)

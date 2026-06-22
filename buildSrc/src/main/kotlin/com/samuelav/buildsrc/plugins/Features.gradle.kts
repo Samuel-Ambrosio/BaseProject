@@ -1,9 +1,10 @@
 import com.samuelav.buildsrc.app.Modules
 import com.samuelav.buildsrc.plugins.extensions.implementation
+import org.gradle.accessors.dm.LibrariesForLibs
 
-plugins {
-    id("AndroidComposeLibrary")
-}
+val libs = the<LibrariesForLibs>()
+
+apply<AndroidComposeLibraryPlugin>()
 
 dependencies {
     implementation(project(Modules.Domain.Model))
