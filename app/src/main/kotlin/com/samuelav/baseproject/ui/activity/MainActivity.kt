@@ -18,6 +18,7 @@ class MainActivity : ComponentActivity() {
         //MobileAds.initialize(this)
 
         installSplashScreen()
+
         setAppThemeContent {
             AppScaffold(
                 modifier =

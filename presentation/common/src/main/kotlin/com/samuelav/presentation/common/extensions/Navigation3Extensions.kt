@@ -1,4 +1,4 @@
-package com.samuelav.presentation.common.app.navigation
+package com.samuelav.presentation.common.extensions
 
 import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.EntryProviderScope
