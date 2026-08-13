@@ -11,10 +11,6 @@ apply<KotlinAndroidBasePlugin>()
 
 android {
     buildFeatures.apply { compose = true }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
-    }
 }
 
 dependencies {

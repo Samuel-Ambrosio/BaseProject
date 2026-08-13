@@ -8,15 +8,10 @@ import org.gradle.accessors.dm.LibrariesForLibs
 
 val libs = the<LibrariesForLibs>()
 
-apply(plugin = libs.plugins.kotlinAndroid.get().pluginId)
-
 android {
-    compileSdkVersion(AppConfig.compileSdkVersion)
+    compileSdk = AppConfig.compileSdkVersion
 
-    defaultConfig {
-        versionCode = AppConfig.versionCode
-        versionName = AppConfig.versionName
-        targetSdk = AppConfig.targetSdkVersion
+    defaultConfig.apply {
         minSdk = AppConfig.minSdkVersion
 
         testInstrumentationRunner = AppConfig.testInstrumentationRunner
@@ -25,7 +20,7 @@ android {
         }
     }
 
-    flavorDimensions("environment")
+    flavorDimensions += "environment"
     productFlavors {
         create("dev") {
             dimension = "environment"
@@ -43,12 +38,10 @@ android {
 
     buildTypes {
         getByName("debug") {
-            minifyEnabled(false)
-            debuggable(true)
+            isMinifyEnabled = false
         }
         getByName("release") {
-            minifyEnabled(true)
-            debuggable(false)
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -57,13 +50,13 @@ android {
         buildConfig = true
     }
 
-    compileOptions {
+    compileOptions.apply {
         isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    packagingOptions {
+    packaging.apply {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }

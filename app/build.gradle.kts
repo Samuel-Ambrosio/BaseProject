@@ -15,6 +15,9 @@ android {
 
     defaultConfig {
         applicationId = AppConfig.applicationId
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
+        targetSdk = AppConfig.targetSdkVersion
     }
 }
 

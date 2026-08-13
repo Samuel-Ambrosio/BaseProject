@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.sp
 import com.samuelav.presentation.common.R
 import androidx.compose.material.Typography as MaterialTypography
 
+@ConsistentCopyVisibility
 data class AppTypography internal constructor(
     val headingH1: TextStyle,
     val headingH2: TextStyle,

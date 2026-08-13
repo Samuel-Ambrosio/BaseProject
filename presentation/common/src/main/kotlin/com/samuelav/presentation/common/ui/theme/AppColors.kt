@@ -3,6 +3,7 @@ package com.samuelav.presentation.common.ui.theme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material.Colors as MaterialColors
 
+@ConsistentCopyVisibility
 data class AppColors internal constructor(
     val info: Color,
     val success: Color,

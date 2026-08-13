@@ -1,53 +1,53 @@
 [versions]
 #Gradle
-androidGradlePlugin = "8.9.1"
-versionsGradlePlugin = "0.52.0"
+androidGradlePlugin = "9.1.1"
+versionsGradlePlugin = "0.54.0"
 graphGeneratorGradlePlugin = "0.8.0"
-crashlyticsGradlePlugin = "3.0.3"
+crashlyticsGradlePlugin = "3.0.7"
 
 #Kotlin
-kotlinCore = "2.1.20"
-kotlinCoroutines = "1.10.2"
-kotlinSerializationCore = "1.9.0"
-ksp = "2.1.20-2.0.0"
+kotlinCore = "2.4.10"
+kotlinCoroutines = "1.11.0"
+kotlinSerializationCore = "1.11.0"
+ksp = "2.3.11"
 
 #Android
 desugarJdkLibs = "2.1.5"
 
 #AndroidX
-coreKtx = "1.16.0"
-appCompat = "1.7.0"
-lifecycle = "2.8.7"
-compose = "2025.04.00"
-composeCompiler = "1.5.15"
-composeNavigation = "2.8.9"
-composeNavigation3 = "1.1.2"
-composeNavigation3ViewModel = "2.10.0"
-composeConstraint = "1.1.1"
-splashScreen = "1.0.1"
-room = "2.7.0"
-dataStore = "1.1.4"
+coreKtx = "1.19.0"
+appCompat = "1.8.0"
+lifecycle = "2.11.0"
+compose = "2026.08.00"
+composeNavigation = "2.9.8"
+composeNavigation3 = "1.1.6"
+composeNavigation3ViewModel = "2.11.0"
+composeConstraint = "1.1.2"
+splashScreen = "1.2.0"
+room = "2.8.4"
+dataStore = "1.2.1"
 
 #Debug
 timber = "5.0.1"
 
 #Google
 accompanist = "0.36.0"
-material = "1.12.0"
-services = "4.4.2"
-servicesAds = "24.2.0"
-firebase = "33.12.0"
+accompanistPermissions = "0.37.3"
+material = "1.14.0"
+services = "4.5.0"
+servicesAds = "25.4.0"
+firebase = "34.17.0"
 
 #Other
-koinCore = "4.0.4"
-retrofitCore = "2.11.0"
-okHttp3Interceptor = "4.12.0"
+koinCore = "4.2.2"
+retrofitCore = "3.0.0"
+okHttp3Interceptor = "5.4.0"
 moshi = "1.15.2"
 
 #Test
 junit = "4.13.2"
-androidJunit = "1.2.1"
-androidEspresso = "3.6.1"
+androidJunit = "1.3.0"
+androidEspresso = "3.7.0"
 
 [libraries]
 #Dependencies
@@ -85,7 +85,7 @@ androidx-datastore = { group = "androidx.datastore", name = "datastore-preferenc
 debug-timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 google-accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanist" }
-google-accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
+google-accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanistPermissions" }
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
 google-accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
 google-accompanist-placeholder = { group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanist" }
@@ -123,7 +123,6 @@ dependencyGraphGeneratorGradlePlugin = { group = "com.vanniktech", name = "gradl
 androidApplication = { id = "com.android.application" }
 androidLibrary = { id = "com.android.library" }
 kotlin = { id = "kotlin" }
-kotlinAndroid = { id = "kotlin-android" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose = { id = "org.jetbrains.kotlin.plugin.compose" }

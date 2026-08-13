@@ -3,6 +3,7 @@ package com.samuelav.presentation.common.ui.theme
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+@ConsistentCopyVisibility
 data class AppSpacing internal constructor(
     val xxxl: Dp = 64.dp,
     val xxl: Dp = 48.dp,
