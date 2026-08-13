@@ -14,7 +14,7 @@ import com.samuelav.presentation.common.extensions.clearAndAdd
 import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 
 @Composable
-fun AppBottomNavigationBar(appState: AppState) {
+internal fun AppBottomNavigationBar(appState: AppState) {
     val navItems = appState.appConfiguration.navItems
     val lastNavItemKey =
         appState.navBackStack.lastOrNull { navKey ->
@@ -31,7 +31,8 @@ fun AppBottomNavigationBar(appState: AppState) {
                     Icon(
                         modifier = Modifier.size(24.dp),
                         painter = navItem.icon.painter,
-                        contentDescription = stringResource(id = navItem.contentDescription))
+                        contentDescription = stringResource(id = navItem.contentDescription),
+                    )
                 },
                 selected = navItem == currentNavItem,
                 onClick = {

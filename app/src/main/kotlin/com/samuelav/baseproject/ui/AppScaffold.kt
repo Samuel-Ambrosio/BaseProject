@@ -9,9 +9,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Snackbar
 import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.samuelav.presentation.common.app.AppState
 import com.samuelav.presentation.common.app.rememberAppState
 import com.samuelav.presentation.common.ui.theme.AppTheme.animations
@@ -19,32 +17,22 @@ import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.features.advert.AdvertBanner
 
 @Composable
-fun AppScaffold(
+internal fun AppScaffold(
     modifier: Modifier,
     appState: AppState = rememberAppState(),
 ) {
-    val screenConfig by appState.screenConfig.collectAsStateWithLifecycle()
+    val isBottomBarVisible =
+        appState.navBackStack.lastOrNull()?.javaClass in
+            appState.appConfiguration.navItems.map { it.navKey.javaClass }
 
     Scaffold(
         modifier = modifier,
         scaffoldState = appState.scaffoldState,
-        topBar = {
-            AnimatedVisibility(
-                visible = screenConfig.appTopBarScreenConfig.isVisible,
-                enter = animations.slideInVerticallyFromTop,
-                exit = animations.slideOutVerticallyFromBottom,
-            ) {
-                AppTopBar(
-                    appState = appState,
-                    appTopBarScreenConfig = screenConfig.appTopBarScreenConfig,
-                )
-            }
-         },
         bottomBar = {
             AnimatedVisibility(
-                visible = screenConfig.appBottomNavigationBarScreenConfig.isVisible,
-                enter = animations.slideInVerticallyFromBottom,
-                exit = animations.slideOutVerticallyFromTop,
+                visible = isBottomBarVisible,
+                enter = animations.bottomBarVisibilityEnter,
+                exit = animations.bottomBarVisibilityExit,
             ) {
                 AppBottomNavigationBar(appState = appState)
             }

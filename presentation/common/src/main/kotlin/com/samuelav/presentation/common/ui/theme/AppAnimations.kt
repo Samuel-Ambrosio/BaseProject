@@ -4,12 +4,15 @@ import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.ui.Alignment
 
 object AppAnimations {
     private const val DURATION = 600
@@ -27,6 +30,19 @@ object AppAnimations {
     val slideInVerticallyFromBottom: EnterTransition = slideInVertically(animationSpec = tween(DURATION)) { it }
     val slideOutVerticallyFromTop: ExitTransition = slideOutVertically(animationSpec = tween(DURATION)) { it }
     val slideOutVerticallyFromBottom: ExitTransition = slideOutVertically(animationSpec = tween(DURATION)) { -it }
+
+    val topBarVisibilityEnter: EnterTransition =
+        slideInVertically(animationSpec = tween(DURATION)) { -it } +
+            expandVertically(animationSpec = tween(DURATION), expandFrom = Alignment.Top)
+    val topBarVisibilityExit: ExitTransition =
+        slideOutVertically(animationSpec = tween(DURATION)) { -it } +
+            shrinkVertically(animationSpec = tween(DURATION), shrinkTowards = Alignment.Top)
+    val bottomBarVisibilityEnter: EnterTransition =
+        slideInVertically(animationSpec = tween(DURATION)) { it } +
+            expandVertically(animationSpec = tween(DURATION), expandFrom = Alignment.Bottom)
+    val bottomBarVisibilityExit: ExitTransition =
+        slideOutVertically(animationSpec = tween(DURATION)) { it } +
+            shrinkVertically(animationSpec = tween(DURATION), shrinkTowards = Alignment.Bottom)
 
     /** Navigation 3 animations */
     val none =

@@ -1,9 +1,8 @@
-package com.samuelav.baseproject.ui
+package com.samuelav.presentation.common.ui.composables.base
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -14,24 +13,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.compose.ConstraintLayout
 import com.samuelav.presentation.common.app.AppState
-import com.samuelav.presentation.common.app.configuration.screen.AppTopBarScreenConfig
 import com.samuelav.presentation.common.app.navigation.AppNavKey
 import com.samuelav.presentation.common.extensions.safeRemoveLast
-import com.samuelav.presentation.common.ui.composables.base.BodyLargeBold
 import com.samuelav.presentation.common.ui.theme.AppTheme.animations
 import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.common.ui.theme.AppTheme.icons
 import com.samuelav.presentation.common.ui.theme.AppTheme.spacing
 
 @Composable
-fun AppTopBar(appState: AppState, appTopBarScreenConfig: AppTopBarScreenConfig) {
-    val onBackClick: () -> Unit =
-        appTopBarScreenConfig.onBackClick ?: {
-            appState.navBackStack.safeRemoveLast(fallbackScreen = AppNavKey.Home.Main)
-        }
-
+fun AppTopBar(
+    title: String? = null,
+    isBackButtonVisible: Boolean = false,
+    onBackClick: (() -> Unit)?,
+) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -41,11 +36,11 @@ fun AppTopBar(appState: AppState, appTopBarScreenConfig: AppTopBarScreenConfig) 
     ) {
         AnimatedVisibility(
             modifier = Modifier.align(Alignment.CenterStart),
-            visible = appTopBarScreenConfig.isBackButtonVisible,
+            visible = isBackButtonVisible,
             enter = animations.slideInHorizontallyFromLeft,
             exit = animations.slideOutHorizontallyFromRight,
         ) {
-            IconButton(onClick = onBackClick) {
+            IconButton(onClick = { onBackClick?.invoke() }) {
                 Icon(
                     modifier = Modifier.size(16.dp),
                     painter = icons.arrowBack.painter,
@@ -55,9 +50,11 @@ fun AppTopBar(appState: AppState, appTopBarScreenConfig: AppTopBarScreenConfig) 
             }
         }
 
-        BodyLargeBold(
-            modifier = Modifier.align(Alignment.Center),
-            text = appTopBarScreenConfig.title,
-        )
+        title?.let {
+            BodyLargeBold(
+                modifier = Modifier.align(Alignment.Center),
+                text = it,
+            )
+        }
     }
 }

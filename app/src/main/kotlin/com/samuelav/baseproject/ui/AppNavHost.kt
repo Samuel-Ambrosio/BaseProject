@@ -22,17 +22,16 @@ import com.samuelav.presentation.features.home.ui.homeNavEntries
 import kotlin.collections.plus
 
 @Composable
-fun AppNavHost(appState: AppState, modifier: Modifier) {
+internal fun AppNavHost(appState: AppState, modifier: Modifier) {
     AppNavDisplay(
         modifier = modifier,
         backStack = appState.navBackStack,
     ) {
         homeNavEntries(appState = appState)
 
-        searchNavEntries(appState = appState)
+        searchNavEntries()
 
         moreNavEntries(
-            appState = appState,
             navigateUp = {
                 appState.navBackStack.safeRemoveLast(fallbackScreen = AppNavKey.Home.Main)
             },
@@ -40,19 +39,18 @@ fun AppNavHost(appState: AppState, modifier: Modifier) {
     }
 }
 
-fun EntryProviderScope<NavKey>.searchNavEntries(appState: AppState) {
+private fun EntryProviderScope<NavKey>.searchNavEntries() {
     appEntry<AppNavKey.Search.Main>(
         metadata = {
             NavDisplay.transitionSpec { AppAnimations.slideVertically } +
             NavDisplay.popTransitionSpec { AppAnimations.popSlideVertically }
         }
     ) {
-        SearchScreen(appState = appState)
+        SearchScreen()
     }
 }
 
-fun EntryProviderScope<NavKey>.moreNavEntries(
-    appState: AppState,
+private fun EntryProviderScope<NavKey>.moreNavEntries(
     navigateUp: () -> Unit,
 ) {
     appEntry<AppNavKey.More.Main>(
@@ -61,13 +59,13 @@ fun EntryProviderScope<NavKey>.moreNavEntries(
             NavDisplay.popTransitionSpec { AppAnimations.popSlideHorizontally }
         }
     ) {
-        MoreScreen(appState = appState, navigateUp = navigateUp)
+        MoreScreen(navigateUp = navigateUp)
     }
 }
 
 @Composable
-private fun SearchScreen(appState: AppState) {
-    Screen(appState = appState, isTopBarVisible = false) {
+private fun SearchScreen() {
+    Screen(isTopBarVisible = false) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -80,13 +78,10 @@ private fun SearchScreen(appState: AppState) {
 
 @Composable
 private fun MoreScreen(
-    appState: AppState,
     navigateUp: () -> Unit,
 ) {
     Screen(
-        appState = appState,
         titleTopBar = stringResource(id = com.samuelav.presentation.common.R.string.nav_item_more),
-        isBottomNavigationBarVisible = false,
         isBackButtonVisible = true,
         onBackClick = navigateUp,
     ) {

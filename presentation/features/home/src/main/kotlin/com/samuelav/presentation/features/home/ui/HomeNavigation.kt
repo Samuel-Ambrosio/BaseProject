@@ -8,6 +8,6 @@ import com.samuelav.presentation.common.extensions.appEntry
 
 fun EntryProviderScope<NavKey>.homeNavEntries(appState: AppState) {
     appEntry<AppNavKey.Home.Main> {
-        MainScreen(appState = appState)
+        MainScreen(appSnackbarHostState = appState.scaffoldState.snackbarHostState)
     }
 }
