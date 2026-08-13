@@ -34,7 +34,6 @@ timber = "5.0.1"
 #Google
 accompanist = "0.36.0"
 material = "1.12.0"
-gson = "2.13.0"
 services = "4.4.2"
 servicesAds = "24.2.0"
 firebase = "33.12.0"
@@ -43,6 +42,7 @@ firebase = "33.12.0"
 koinCore = "4.0.4"
 retrofitCore = "2.11.0"
 okHttp3Interceptor = "4.12.0"
+moshi = "1.15.2"
 
 #Test
 junit = "4.13.2"
@@ -90,16 +90,18 @@ google-accompanist-pager = { group = "com.google.accompanist", name = "accompani
 google-accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
 google-accompanist-placeholder = { group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanist" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
 google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "servicesAds" }
 
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitCore" }
-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitCore" }
+retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofitCore" }
 
 okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp3Interceptor" }
+
+moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
 
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 test-android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidJunit" }

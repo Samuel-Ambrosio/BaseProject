@@ -20,5 +20,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.androidx.datastore)
-    implementation(libs.google.gson)
+    implementation(libs.moshi.core)
 }

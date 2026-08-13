@@ -1,11 +1,14 @@
 package com.samuelav.data.sourcesImpl.remote.utils
 
-import com.google.gson.JsonSyntaxException
+import com.samuelav.data.sourcesImpl.remote.models.NetworkApiError
+import com.samuelav.data.sourcesImpl.remote.models.toError
 import com.samuelav.domain.model.extensions.isNotNull
 import com.samuelav.domain.model.extensions.isNull
 import com.samuelav.domain.model.utils.Error
 import com.samuelav.domain.model.utils.Result
 import com.samuelav.domain.model.utils.debug.AppLogger
+import com.squareup.moshi.JsonDataException
+import com.squareup.moshi.JsonEncodingException
 import okhttp3.Request
 import okhttp3.ResponseBody
 import okio.EOFException
@@ -19,7 +22,7 @@ import java.time.format.DateTimeParseException
 
 internal class ResultResponseCall<S : Any>(
     private val call: Call<S>,
-    private val errorConverter: Converter<ResponseBody, Error.Api>,
+    private val errorConverter: Converter<ResponseBody, NetworkApiError>,
 ): Call<Result<Error, S>> {
     override fun enqueue(callback: Callback<Result<Error, S>>) {
         synchronized(this) {
@@ -49,7 +52,8 @@ internal class ResultResponseCall<S : Any>(
                                 is HttpException ->
                                     t.response()?.handleApiError(errorConverter = errorConverter)
                                         ?: t.handleHttpException()
-                                is JsonSyntaxException -> Error.JsonSyntax
+                                is JsonDataException -> Error.JsonSyntax
+                                is JsonEncodingException -> Error.JsonSyntax
                                 is DateTimeParseException -> Error.DateTimeParse
                                 else -> Error.Network
                             }
@@ -88,11 +92,11 @@ internal class ResultResponseCall<S : Any>(
         }
 
     private fun <S> Response<S>.handleApiError(
-        errorConverter: Converter<ResponseBody, Error.Api>
+        errorConverter: Converter<ResponseBody, NetworkApiError>
     ): Error =
         try {
-            val apiError = errorConverter.convert(errorBody()!!)!!
-            if (apiError.errors.isNullOrEmpty()) Error.Server else apiError
+            val apiError = errorBody()?.let { errorConverter.convert(it)?.toError() }
+            if (apiError?.errors.isNullOrEmpty()) Error.Server else apiError
         } catch (ex: Exception) {
             if (ex is EOFException) Error.Server else Error.Unknown
         }

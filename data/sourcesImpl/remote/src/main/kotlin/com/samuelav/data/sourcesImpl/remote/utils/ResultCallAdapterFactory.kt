@@ -1,6 +1,6 @@
 package com.samuelav.data.sourcesImpl.remote.utils
 
-import com.samuelav.domain.model.utils.Error
+import com.samuelav.data.sourcesImpl.remote.models.NetworkApiError
 import com.samuelav.domain.model.utils.Result
 import retrofit2.Call
 import retrofit2.CallAdapter
@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
-class ResultCallAdapterFactory() : CallAdapter.Factory() {
+internal class ResultCallAdapterFactory : CallAdapter.Factory() {
 
     override fun get(
         returnType: Type,
@@ -28,7 +28,7 @@ class ResultCallAdapterFactory() : CallAdapter.Factory() {
 
         val successBodyType = containerType.getBodyType()
         val errorBodyConverter =
-            retrofit.nextResponseBodyConverter<Error.Api>(null, Error.Api::class.java, annotations)
+            retrofit.nextResponseBodyConverter<NetworkApiError>(null, NetworkApiError::class.java, annotations)
 
         return when (getRawType(returnType)) {
             Call::class.java -> ResultCallAdapter<Any>(successBodyType, errorBodyConverter)
