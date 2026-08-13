@@ -11,6 +11,10 @@ android {
     namespace = Namespaces.Data.SourcesImpl.Local
 }
 
+kotlin {
+    explicitApi()
+}
+
 dependencies {
     implementation(project(Modules.Domain.Model))
     implementation(project(Modules.Data.Sources))

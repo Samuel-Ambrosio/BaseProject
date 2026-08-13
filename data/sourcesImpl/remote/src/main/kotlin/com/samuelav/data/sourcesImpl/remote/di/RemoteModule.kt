@@ -12,11 +12,12 @@ import com.squareup.moshi.Moshi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-val remoteModule = module {
+public val remoteModule: Module = module {
     single { interceptorProvider() }
     single { okHttpClientProvider(interceptor = get()) }
     single { moshiProvider() }
