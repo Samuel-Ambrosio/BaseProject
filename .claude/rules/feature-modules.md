@@ -69,7 +69,7 @@ when (state) {
 ```kotlin
 CommandHandler(viewModel) { command ->
     when (command) {
-        is MainCommand.Error ->
+        is DetailCommand.DeleteFailed ->
             appSnackbarHostState.showSnackbar(message = command.error.handleErrorMessage(resources = resources))
     }
 }
@@ -79,4 +79,4 @@ If a `Command` triggers navigation and also a snackbar that must outlive the scr
 
 **How to choose**: if the failure prevents showing the main content → full-screen retry (`state.error`/`Failure`). If the content is already loaded and a secondary action fails → snackbar (`Command`). Do not mix both for the same kind of failure.
 
-**Careful with the sample screen**: `MainScreen`/`MainViewModel` show the initial load error with a snackbar and do not paint `isLoading`. It is a minimal wiring sample, not the pattern to follow for a real screen.
+**Reference implementation**: `MainScreen`/`MainViewModel` (`presentation:features:home`) follow the `sealed interface` shape with `ColdStateBaseViewModel`: `Loading` → progress indicator, `Ready` → content, `Failure` → full-screen error with a retry `AppButton` bound to `viewModel::retry`. `MainScreenTest` and `AppE2ETest` cover the three cases and the retry.

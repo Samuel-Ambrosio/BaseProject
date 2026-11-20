@@ -83,7 +83,10 @@ Note: this is a template, and part of the code is sample code (the *Todo* featur
 
 - All code that touches Firebase, the network, disk or time must be able to receive a substitute through injection (Koin `get()`, overridden in tests with a fake or a mock).
 - If a method cannot be tested without spinning up Robolectric/real Android, that is a sign of a DIP violation.
-- The project has no tests of its own yet. When adding the first one of a kind (ViewModel unit test, Repository test, Moshi decoding test, Koin graph test), put it in the module of the code under test and use a library already declared in `libs.versions.toml`; if one is missing, add it there.
+- Tests live in the module of the code under test and only use libraries declared in `libs.versions.toml` (add a missing one there). The README's "Tests" section lists each kind and where its reference lives: follow the existing one before writing a new kind.
+- Prefer hand-written fakes of the contract (`FakeTodoRepository`) over mocks; MockK is for third-party types that cannot be faked (`FirebaseAnalytics` in `DIModulesTest`).
+- A new Koin definition must keep `DIModulesTest` (`app/src/test`) green: if it needs an SDK or a real device, override it there with a fake instead of excluding the module.
+- A UI change that alters a Roborazzi reference image is re-recorded (`./gradlew recordRoborazziDebug`) in the same change, after checking the new image is the intended one.
 
 ---
 

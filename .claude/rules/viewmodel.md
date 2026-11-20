@@ -16,7 +16,7 @@ Both expose the same contract:
 
 - `state: StateFlow<State>`: the screen's persistent state.
 - `command: SharedFlow<Command>` (through the `CommandSource` interface): one-shot events (navigation, snackbars), emitted with `emitCommand(...)` and consumed in the screen with `CommandHandler(viewModel) { command -> ... }` (a `LaunchedEffect(viewModel)` inside).
-- `ioCoroutineScope`: `viewModelScope` on the IO dispatcher, for UseCase calls. `ColdStateBaseViewModel` takes the dispatcher through its constructor (`ioDispatcher`, `Dispatchers.IO` by default) so it can be replaced in tests.
+- `ioCoroutineScope`: `viewModelScope` on the IO dispatcher, for UseCase calls. Both base classes take the dispatcher through their constructor (`ioDispatcher`, `Dispatchers.IO` by default) and a concrete ViewModel exposes the same parameter, so tests can pass a `StandardTestDispatcher`.
 
 ### When to use each one
 
@@ -50,13 +50,16 @@ Do not add a third base class without a real consumer that justifies it; do not 
 ## No `enum Screen` — use `State` + sealed `Command`
 
 - **`State`** (`data class`, or a `sealed interface` with `Loading`/`Ready`/`Failure` when each case has its own, mutually exclusive data; see `feature-modules.md`): what is painted right now.
-- **`Command`** (`sealed interface`): which one-shot action to trigger (navigate, show a snackbar). Real example:
+- **`Command`** (`sealed interface`): which one-shot action to trigger (navigate, show a snackbar). Example:
 
 ```kotlin
-internal sealed interface MainCommand {
-    data class Error(val error: com.samuelav.domain.model.utils.Error) : MainCommand
+internal sealed interface DetailCommand {
+    data class DeleteFailed(val error: Error) : DetailCommand
+    data object NavigateUp : DetailCommand
 }
 ```
+
+A ViewModel with no one-shot actions declares `Nothing` as its `Command` type (`MainViewModel : ColdStateBaseViewModel<MainState, Nothing>`) instead of an empty `sealed interface`.
 
 `State` and `Command` are declared in the ViewModel file, below the class, `internal`. With `ColdStateBaseViewModel`, `State` is usually the `sealed interface` form (`Loading`/`Ready`/`Failure`).
 

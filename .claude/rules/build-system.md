@@ -26,15 +26,20 @@ Chain of precompiled plugins (`plugins { id("convention.…") }`):
 convention.detekt              (detekt + ktlint, config/detekt/detekt.yml)
    ▲
    ├── convention.kotlin.library        (pure Kotlin: domain:*, data:sources, data:repositoryImpl;
-   │                                     coroutines + Koin, jvmToolchain)
-   └── convention.android.base          (compileSdk/minSdk, desugaring, coroutines, Koin, JUnit/Espresso)
+   │                                     coroutines + Koin, jvmToolchain; tests: JUnit, kotlin-test,
+   │                                     coroutines-test, Turbine)
+   └── convention.android.base          (compileSdk/compileSdkMinor/minSdk, desugaring, coroutines, Koin;
+                                         tests: JUnit, kotlin-test, coroutines-test, Turbine;
+                                         androidTest: runner, ext-junit, Espresso)
           ▲
           ├── convention.android.library          (+ com.android.library, serialization)
           │      ▲
           │      └── convention.android.compose.library   (+ convention.android.compose)
           │             ▲
           │             └── convention.android.feature    (+ domain:model, domain:useCase,
-          │                                                 presentation:analytics, presentation:common)
+          │                                                 presentation:analytics, presentation:common;
+          │                                                 screen tests: Robolectric, Compose UI test,
+          │                                                 koin-test, isIncludeAndroidResources)
           └── convention.android.application      (+ com.android.application, compose, flavors,
                                                     targetSdk, R8 in release)
 
