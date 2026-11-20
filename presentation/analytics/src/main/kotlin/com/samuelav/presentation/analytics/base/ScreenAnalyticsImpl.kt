@@ -2,7 +2,7 @@ package com.samuelav.presentation.analytics.base
 
 internal class ScreenAnalyticsImpl(
     private val coreFirebaseAnalytics: CoreFirebaseAnalytics
-): ScreenAnalytics {
+) : ScreenAnalytics {
     override fun notifyAction(action: AnalyticsAction?) {
         action ?: return
         coreFirebaseAnalytics.logEvent(action.eventName) {

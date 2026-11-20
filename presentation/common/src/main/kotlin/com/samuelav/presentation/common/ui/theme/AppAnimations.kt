@@ -56,20 +56,20 @@ object AppAnimations {
         ContentTransform(
             targetContentEnter = fadeIn(animationSpec = tween(DURATION)),
             initialContentExit =
-                fadeOut(
-                    animationSpec = tween(DURATION),
-                    targetAlpha = 1f,
-                ),
+            fadeOut(
+                animationSpec = tween(DURATION),
+                targetAlpha = 1f,
+            ),
             sizeTransform = null,
         )
 
     val popFade =
         ContentTransform(
             targetContentEnter =
-                fadeIn(
-                    animationSpec = tween(DURATION),
-                    initialAlpha = 1f,
-                ),
+            fadeIn(
+                animationSpec = tween(DURATION),
+                initialAlpha = 1f,
+            ),
             initialContentExit = fadeOut(animationSpec = tween(DURATION)),
             sizeTransform = null,
         )
@@ -77,60 +77,60 @@ object AppAnimations {
     val slideHorizontally =
         ContentTransform(
             targetContentEnter =
-                slideInHorizontally(
-                    animationSpec = tween(DURATION),
-                    initialOffsetX = { fullWidth -> fullWidth },
-                ),
+            slideInHorizontally(
+                animationSpec = tween(DURATION),
+                initialOffsetX = { fullWidth -> fullWidth },
+            ),
             initialContentExit =
-                slideOutHorizontally(
-                    animationSpec = tween(DURATION),
-                    targetOffsetX = { fullWidth -> -fullWidth },
-                ),
+            slideOutHorizontally(
+                animationSpec = tween(DURATION),
+                targetOffsetX = { fullWidth -> -fullWidth },
+            ),
             sizeTransform = null,
         )
 
     val popSlideHorizontally =
         ContentTransform(
             targetContentEnter =
-                slideInHorizontally(
-                    animationSpec = tween(DURATION),
-                    initialOffsetX = { fullWidth -> -fullWidth },
-                ),
+            slideInHorizontally(
+                animationSpec = tween(DURATION),
+                initialOffsetX = { fullWidth -> -fullWidth },
+            ),
             initialContentExit =
-                slideOutHorizontally(
-                    animationSpec = tween(DURATION),
-                    targetOffsetX = { fullWidth -> fullWidth },
-                ),
+            slideOutHorizontally(
+                animationSpec = tween(DURATION),
+                targetOffsetX = { fullWidth -> fullWidth },
+            ),
             sizeTransform = null,
         )
 
     val slideVertically =
         ContentTransform(
             targetContentEnter =
-                slideInVertically(
-                    animationSpec = tween(DURATION),
-                    initialOffsetY = { fullHeight -> fullHeight },
-                ),
+            slideInVertically(
+                animationSpec = tween(DURATION),
+                initialOffsetY = { fullHeight -> fullHeight },
+            ),
             initialContentExit =
-                slideOutVertically(
-                    animationSpec = tween(DURATION),
-                    targetOffsetY = { fullHeight -> -fullHeight },
-                ),
+            slideOutVertically(
+                animationSpec = tween(DURATION),
+                targetOffsetY = { fullHeight -> -fullHeight },
+            ),
             sizeTransform = null,
         )
 
     val popSlideVertically =
         ContentTransform(
             targetContentEnter =
-                slideInVertically(
-                    animationSpec = tween(DURATION),
-                    initialOffsetY = { fullHeight -> -fullHeight },
-                ),
+            slideInVertically(
+                animationSpec = tween(DURATION),
+                initialOffsetY = { fullHeight -> -fullHeight },
+            ),
             initialContentExit =
-                slideOutVertically(
-                    animationSpec = tween(DURATION),
-                    targetOffsetY = { fullHeight -> fullHeight },
-                ),
+            slideOutVertically(
+                animationSpec = tween(DURATION),
+                targetOffsetY = { fullHeight -> fullHeight },
+            ),
             sizeTransform = null,
         )
 }

@@ -28,18 +28,18 @@ internal val BaseLightAppColors =
         warning = chromeYellow,
         error = darkPastelRed,
         materialColors =
-            lightColors(
-                primary = celticBlueLight,
-                primaryVariant = blueberry,
-                secondary = azureWhite,
-                secondaryVariant = azureWhite,
-                background = Color.White,
-                surface = lotion,
-                onPrimary = Color.White,
-                onSecondary = Color.White,
-                onSurface = eerieBlack,
-                onBackground = eerieBlack,
-            )
+        lightColors(
+            primary = celticBlueLight,
+            primaryVariant = blueberry,
+            secondary = azureWhite,
+            secondaryVariant = azureWhite,
+            background = Color.White,
+            surface = lotion,
+            onPrimary = Color.White,
+            onSecondary = Color.White,
+            onSurface = eerieBlack,
+            onBackground = eerieBlack,
+        )
     )
 
 internal val BaseDarkAppColors =
@@ -49,16 +49,16 @@ internal val BaseDarkAppColors =
         warning = buffYellow,
         error = melonRed,
         materialColors =
-            darkColors(
-                primary = blueberry,
-                primaryVariant = celticBlueLight,
-                secondary = azureWhite,
-                secondaryVariant = azureWhite,
-                background = eerieBlack,
-                surface = raisinBlack,
-                onPrimary = Color.White,
-                onSecondary = Color.White,
-                onSurface = Color.White,
-                onBackground = Color.White,
-            )
+        darkColors(
+            primary = blueberry,
+            primaryVariant = celticBlueLight,
+            secondary = azureWhite,
+            secondaryVariant = azureWhite,
+            background = eerieBlack,
+            surface = raisinBlack,
+            onPrimary = Color.White,
+            onSecondary = Color.White,
+            onSurface = Color.White,
+            onBackground = Color.White,
+        )
     )

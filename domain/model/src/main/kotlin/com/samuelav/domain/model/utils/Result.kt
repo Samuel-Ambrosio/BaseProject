@@ -1,9 +1,9 @@
 package com.samuelav.domain.model.utils
 
 sealed class Result<out F, out S> {
-    data object Loading: Result<Nothing, Nothing>()
-    data class Success<S>(val data: S): Result<Nothing, S>()
-    data class Failure<F>(val error: F): Result<F, Nothing>()
+    data object Loading : Result<Nothing, Nothing>()
+    data class Success<S>(val data: S) : Result<Nothing, S>()
+    data class Failure<F>(val error: F) : Result<F, Nothing>()
 }
 
 inline fun <reified F, reified S> Result<F, S>.fold(

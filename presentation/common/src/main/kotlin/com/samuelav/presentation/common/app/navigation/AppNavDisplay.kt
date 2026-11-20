@@ -22,10 +22,10 @@ fun <T : Any> AppNavDisplay(
         modifier = modifier,
         backStack = backStack,
         entryDecorators =
-            listOf(
-                rememberSaveableStateHolderNavEntryDecorator(),
-                rememberViewModelStoreNavEntryDecorator(),
-            ),
+        listOf(
+            rememberSaveableStateHolderNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator(),
+        ),
         entryProvider = entryProvider(builder = screens),
         transitionSpec = { transition },
         popTransitionSpec = { popTransition },

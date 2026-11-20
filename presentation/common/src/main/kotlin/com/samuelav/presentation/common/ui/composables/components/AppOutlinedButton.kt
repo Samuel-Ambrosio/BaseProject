@@ -22,5 +22,6 @@ fun AppOutlinedButton(
         onClick = onClick,
         shape = shapes.large,
         border = BorderStroke(width = 0.5.dp, color = borderColor),
-        content = content)
+        content = content
+    )
 }

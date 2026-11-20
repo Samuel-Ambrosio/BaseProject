@@ -1,0 +1,67 @@
+config:
+  validation: true
+  warningsAsErrors: false
+
+comments:
+  UndocumentedPublicClass:
+    active: false
+  UndocumentedPublicFunction:
+    active: false
+
+complexity:
+  LongMethod:
+    allowedLines: 79
+  LongParameterList:
+    allowedFunctionParameters: 7
+    allowedConstructorParameters: 9
+  TooManyFunctions:
+    allowedFunctionsPerFile: 24
+    allowedFunctionsPerClass: 24
+    allowedFunctionsPerInterface: 24
+    allowedFunctionsPerObject: 24
+    allowedFunctionsPerEnum: 24
+  CyclomaticComplexMethod:
+    # Sealed-type `when` mappers (error -> message, code -> Error, ...) legitimately sit around 15.
+    allowedComplexity: 19
+
+naming:
+  FunctionNaming:
+    # @Composable functions are PascalCase by convention, not camelCase.
+    ignoreAnnotated: [ 'Composable' ]
+
+style:
+  ForbiddenComment:
+    # This template intentionally uses TODOs to mark setup steps left for whoever clones it
+    # (e.g. "uncomment once google-services.json is added").
+    active: false
+  MagicNumber:
+    # Too noisy against Compose UI code (paddings, sizes, alpha values, ...).
+    active: false
+  MaxLineLength:
+    maxLineLength: 140
+    excludeCommentStatements: true
+  UnusedPrivateFunction:
+    # Preview composables are only called by tooling, never from Kotlin source.
+    ignoreAnnotated: [ 'Preview' ]
+
+ktlint:
+  active: true
+  MaximumLineLength:
+    maxLineLength: 140
+  # Keep the project's existing style: these ktlint 1.x rules would reflow every signature
+  # and force one trailing-comma policy, while the code base deliberately mixes both.
+  TrailingCommaOnCallSite:
+    active: false
+  TrailingCommaOnDeclarationSite:
+    active: false
+  ClassSignature:
+    active: false
+  FunctionSignature:
+    active: false
+  StatementWrapping:
+    active: false
+  BlankLineBetweenWhenConditions:
+    active: false
+  NoEmptyFile:
+    # Placeholder kept fully commented out until the template gets its first Room entity.
+    excludes: [ '**/AppRoomDatabase.kt' ]

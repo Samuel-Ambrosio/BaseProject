@@ -15,4 +15,5 @@ val appComponent =
         repositoryModule,
         useCaseModule,
         analyticsModule,
-        featureHomeModule)
+        featureHomeModule
+    )

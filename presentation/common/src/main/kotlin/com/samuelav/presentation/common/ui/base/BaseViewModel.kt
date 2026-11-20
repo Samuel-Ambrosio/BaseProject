@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<State, Command>(initialState: State): ViewModel() {
+abstract class BaseViewModel<State, Command>(initialState: State) : ViewModel() {
     protected val ioCoroutineScope = CoroutineScope(viewModelScope.coroutineContext + Dispatchers.IO)
 
     private val _state = MutableStateFlow(initialState)

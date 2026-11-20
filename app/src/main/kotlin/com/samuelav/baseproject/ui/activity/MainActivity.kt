@@ -15,16 +15,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // TODO: Remove '//' after google-services.json file and ad id are added
-        //MobileAds.initialize(this)
+        // MobileAds.initialize(this)
 
         installSplashScreen()
 
         setAppThemeContent {
             AppScaffold(
                 modifier =
-                    Modifier.fillMaxSize()
-                            .statusBarsPadding()
-                            .navigationBarsPadding(),
+                Modifier.fillMaxSize()
+                    .statusBarsPadding()
+                    .navigationBarsPadding(),
             )
         }
     }

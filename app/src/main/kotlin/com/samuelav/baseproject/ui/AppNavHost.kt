@@ -43,7 +43,7 @@ private fun EntryProviderScope<NavKey>.searchNavEntries() {
     appEntry<AppNavKey.Search.Main>(
         metadata = {
             NavDisplay.transitionSpec { AppAnimations.slideVertically } +
-            NavDisplay.popTransitionSpec { AppAnimations.popSlideVertically }
+                NavDisplay.popTransitionSpec { AppAnimations.popSlideVertically }
         }
     ) {
         SearchScreen()
@@ -56,7 +56,7 @@ private fun EntryProviderScope<NavKey>.moreNavEntries(
     appEntry<AppNavKey.More.Main>(
         metadata = {
             NavDisplay.transitionSpec { AppAnimations.slideHorizontally } +
-            NavDisplay.popTransitionSpec { AppAnimations.popSlideHorizontally }
+                NavDisplay.popTransitionSpec { AppAnimations.popSlideHorizontally }
         }
     ) {
         MoreScreen(navigateUp = navigateUp)

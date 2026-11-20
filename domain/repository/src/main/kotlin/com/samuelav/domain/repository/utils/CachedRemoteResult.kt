@@ -4,8 +4,10 @@ import com.samuelav.domain.model.extensions.isNull
 import com.samuelav.domain.model.utils.Error
 import com.samuelav.domain.model.utils.Result
 import com.samuelav.domain.model.utils.asFailure
+import com.samuelav.domain.model.utils.debug.AppLogger
 import com.samuelav.domain.model.utils.fold
 import com.samuelav.domain.model.utils.mapSuccess
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -42,7 +44,10 @@ suspend inline fun <reified T, reified R> cachedRemoteResource(
         } else {
             Result.Success(cachedResult)
         }
-    } catch (e: Exception) {
+    } catch (e: CancellationException) {
+        throw e
+    } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
+        AppLogger.e(e, "cachedRemoteResource failed")
         Result.Failure(Error.Unknown)
     }
 }

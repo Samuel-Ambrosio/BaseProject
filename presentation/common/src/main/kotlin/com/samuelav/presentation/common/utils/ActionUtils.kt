@@ -3,6 +3,7 @@ package com.samuelav.presentation.common.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import com.samuelav.domain.model.utils.debug.AppLogger
 import com.samuelav.presentation.common.R
 
 fun Context.sendEmail(
@@ -21,7 +22,8 @@ fun Context.sendEmail(
         } else {
             onFailedSendEmail()
         }
-    } catch (ex: Exception) {
+    } catch (@Suppress("TooGenericExceptionCaught") ex: Exception) {
+        AppLogger.e(ex, "sendEmail failed")
         onFailedSendEmail()
     }
 }

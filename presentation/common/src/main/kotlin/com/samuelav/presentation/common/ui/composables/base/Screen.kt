@@ -7,9 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.samuelav.presentation.common.app.AppState
-import com.samuelav.presentation.common.app.navigation.AppNavKey
-import com.samuelav.presentation.common.extensions.safeRemoveLast
 import com.samuelav.presentation.common.ui.theme.AppTheme.animations
 
 @Composable

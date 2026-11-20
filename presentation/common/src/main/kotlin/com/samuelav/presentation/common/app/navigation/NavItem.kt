@@ -12,19 +12,19 @@ sealed class NavItem(
     @StringRes val title: Int,
     @StringRes val contentDescription: Int,
 ) {
-    data object Home: NavItem(
+    data object Home : NavItem(
         navKey = AppNavKey.Home.Main,
         icon = AppIconography.home,
         title = R.string.nav_item_home,
         contentDescription = R.string.nav_item_home,
     )
-    data object Search: NavItem(
+    data object Search : NavItem(
         navKey = AppNavKey.Search.Main,
         icon = AppIconography.search,
         title = R.string.nav_item_search,
         contentDescription = R.string.nav_item_search,
     )
-    data object More: NavItem(
+    data object More : NavItem(
         navKey = AppNavKey.More.Main,
         icon = AppIconography.more,
         title = R.string.nav_item_more,

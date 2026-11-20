@@ -13,9 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.samuelav.presentation.common.app.AppState
-import com.samuelav.presentation.common.app.navigation.AppNavKey
-import com.samuelav.presentation.common.extensions.safeRemoveLast
 import com.samuelav.presentation.common.ui.theme.AppTheme.animations
 import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.common.ui.theme.AppTheme.icons

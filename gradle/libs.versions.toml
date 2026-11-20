@@ -4,6 +4,7 @@ androidGradlePlugin = "9.1.1"
 versionsGradlePlugin = "0.54.0"
 graphGeneratorGradlePlugin = "0.8.0"
 crashlyticsGradlePlugin = "3.0.7"
+detekt = "2.0.0-alpha.6"
 
 #Kotlin
 kotlinCore = "2.4.10"
@@ -103,6 +104,8 @@ okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-intercep
 moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
 moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
 
+detekt-ktlint = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
+
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 test-android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidJunit" }
 test-android-junit-compose = { group = "androidx.compose.ui", name = "ui-test-junit4" }
@@ -130,3 +133,4 @@ googleServices = { id = "com.google.gms.google-services" }
 crashlytics = { id = "com.google.firebase.crashlytics" }
 checkVersions = { id = "com.github.ben-manes.versions" }
 dependencyGraphGenerator = { id = "com.vanniktech.dependency.graph.generator" }
+detekt = { id = "dev.detekt", version.ref = "detekt" }

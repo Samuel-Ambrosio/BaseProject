@@ -23,11 +23,11 @@ import java.time.format.DateTimeParseException
 internal class ResultResponseCall<S : Any>(
     private val call: Call<S>,
     private val errorConverter: Converter<ResponseBody, NetworkApiError>,
-): Call<Result<Error, S>> {
+) : Call<Result<Error, S>> {
     override fun enqueue(callback: Callback<Result<Error, S>>) {
         synchronized(this) {
             call.enqueue(
-                object :Callback<S> {
+                object : Callback<S> {
                     override fun onResponse(call: Call<S>, response: Response<S>) {
                         val body = response.body()
                         val result =
@@ -37,7 +37,8 @@ internal class ResultResponseCall<S : Any>(
                                 response.isSuccessful && body.isNotNull() ->
                                     Result.Success(body)
                                 else -> Result.Failure(
-                                    response.handleApiError(errorConverter = errorConverter))
+                                    response.handleApiError(errorConverter = errorConverter)
+                                )
                             }
 
                         callback.onResponse(
@@ -72,7 +73,7 @@ internal class ResultResponseCall<S : Any>(
 
     override fun isExecuted(): Boolean = synchronized(this) { call.isExecuted }
     override fun clone(): Call<Result<Error, S>> = ResultResponseCall(call.clone(), errorConverter)
-    override fun isCanceled(): Boolean  = synchronized(this) { call.isCanceled }
+    override fun isCanceled(): Boolean = synchronized(this) { call.isCanceled }
     override fun cancel() = synchronized(this) { call.cancel() }
     override fun execute(): Response<Result<Error, S>> =
         throw UnsupportedOperationException("Suspend call does not support synchronous execution")
@@ -97,7 +98,9 @@ internal class ResultResponseCall<S : Any>(
         try {
             val apiError = errorBody()?.let { errorConverter.convert(it)?.toError() }
             if (apiError?.errors.isNullOrEmpty()) Error.Server else apiError
-        } catch (ex: Exception) {
-            if (ex is EOFException) Error.Server else Error.Unknown
+        } catch (_: EOFException) {
+            Error.Server
+        } catch (@Suppress("TooGenericExceptionCaught") _: Exception) {
+            Error.Unknown
         }
 }

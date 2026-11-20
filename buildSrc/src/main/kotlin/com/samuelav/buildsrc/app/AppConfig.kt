@@ -7,7 +7,7 @@ object AppConfig {
     const val compileSdkVersion = 37
     const val targetSdkVersion = compileSdkVersion
     const val minSdkVersion = 26
-    const val kotlinJvmTarget = "21"
+    const val kotlinJvmTarget = "25"
 
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }

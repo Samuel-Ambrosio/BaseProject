@@ -63,7 +63,7 @@ data class AppTypography internal constructor(
             fontWeight = FontWeight.Bold,
             fontSize = 16.sp,
         ),
-    ): this(
+    ) : this(
         headingH1 = headingH1.copy(fontFamily = fontFamily),
         headingH2 = headingH2.copy(fontFamily = fontFamily),
         bodyLargeBold = bodyLargeBold.copy(fontFamily = fontFamily),
@@ -71,19 +71,19 @@ data class AppTypography internal constructor(
         bodyMediumBold = bodyMediumBold.copy(fontFamily = fontFamily),
         bodyMediumRegular = bodyMediumRegular.copy(fontFamily = fontFamily),
         bodySmallBold = bodySmallBold.copy(fontFamily = fontFamily),
-        bodySmallRegular= bodySmallRegular.copy(fontFamily = fontFamily),
+        bodySmallRegular = bodySmallRegular.copy(fontFamily = fontFamily),
         button = button.copy(fontFamily = fontFamily),
         materialTypography =
-            MaterialTypography(
-                defaultFontFamily = fontFamily,
-                h1 = headingH1,
-                h2 = headingH2,
-                subtitle1 = bodyLargeBold,
-                subtitle2 = bodyMediumBold,
-                body1 = bodyLargeRegular,
-                body2 = bodyMediumRegular,
-                button = button,
-                caption = bodySmallRegular,
-            ),
+        MaterialTypography(
+            defaultFontFamily = fontFamily,
+            h1 = headingH1,
+            h2 = headingH2,
+            subtitle1 = bodyLargeBold,
+            subtitle2 = bodyMediumBold,
+            body1 = bodyLargeRegular,
+            body2 = bodyMediumRegular,
+            button = button,
+            caption = bodySmallRegular,
+        ),
     )
 }

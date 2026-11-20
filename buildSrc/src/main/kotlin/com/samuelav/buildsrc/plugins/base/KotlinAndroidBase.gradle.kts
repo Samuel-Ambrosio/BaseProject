@@ -52,8 +52,8 @@ android {
 
     compileOptions.apply {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.toVersion(AppConfig.kotlinJvmTarget)
+        targetCompatibility = JavaVersion.toVersion(AppConfig.kotlinJvmTarget)
     }
 
     packaging.apply {

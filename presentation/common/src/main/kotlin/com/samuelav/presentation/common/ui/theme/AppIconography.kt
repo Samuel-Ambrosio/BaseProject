@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import com.samuelav.presentation.common.R
 
-
 /**
  *  [Icons reference](https://fonts.google.com/icons?icon.style=Rounded)
  */

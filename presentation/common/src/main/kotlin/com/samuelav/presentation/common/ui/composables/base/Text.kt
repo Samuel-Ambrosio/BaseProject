@@ -27,7 +27,8 @@ fun Heading1(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -47,7 +48,8 @@ fun Heading2(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -67,7 +69,8 @@ fun BodyLargeBold(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -87,7 +90,8 @@ fun BodyLargeRegular(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -107,7 +111,8 @@ fun BodyMediumBold(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -127,7 +132,8 @@ fun BodyMediumRegular(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -147,7 +153,8 @@ fun BodySmallBold(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -167,7 +174,8 @@ fun BodySmallRegular(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }
 
 @Composable
@@ -187,5 +195,6 @@ fun ButtonText(
         textDecoration = textDecoration,
         textAlign = textAlign,
         maxLines = maxLines,
-        overflow = TextOverflow.Ellipsis)
+        overflow = TextOverflow.Ellipsis
+    )
 }

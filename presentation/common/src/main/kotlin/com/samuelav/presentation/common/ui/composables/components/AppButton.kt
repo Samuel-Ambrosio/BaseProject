@@ -21,5 +21,6 @@ fun AppButton(
         onClick = onClick,
         shape = shapes.large,
         colors = ButtonDefaults.buttonColors(backgroundColor = backgroundColor),
-        content = content)
+        content = content
+    )
 }

@@ -3,9 +3,14 @@ package com.samuelav.presentation.common.ui.theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.LocalElevationOverlay
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ProvidedValue
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
 
 @Composable
+@Suppress("SpreadOperator")
 fun AppTheme(
     appAnimations: AppAnimations = AppAnimations,
     appColors: AppColors = if (isSystemInDarkTheme()) BaseDarkAppColors else BaseLightAppColors,
@@ -20,7 +25,8 @@ fun AppTheme(
             LocalAppColors provides appColors,
             LocalAppIconography provides appIconography,
             LocalAppSpacing provides appSpacing,
-            LocalAppTypography provides appTypography)
+            LocalAppTypography provides appTypography
+        )
     if (isSystemInDarkTheme()) providedValues.add(LocalElevationOverlay provides null)
 
     CompositionLocalProvider(*providedValues.toTypedArray()) {
@@ -28,21 +34,27 @@ fun AppTheme(
             colors = appColors.materialColors,
             typography = appTypography.materialTypography,
             shapes = Shapes,
-            content = content)
+            content = content
+        )
     }
 }
 
 object AppTheme {
     val animations: AppAnimations
-        @Composable @ReadOnlyComposable get() = LocalAppAnimations.current
+        @Composable @ReadOnlyComposable
+        get() = LocalAppAnimations.current
     val colors: AppColors
-        @Composable @ReadOnlyComposable get() = LocalAppColors.current
+        @Composable @ReadOnlyComposable
+        get() = LocalAppColors.current
     val icons: AppIconography
-        @Composable @ReadOnlyComposable get() = LocalAppIconography.current
+        @Composable @ReadOnlyComposable
+        get() = LocalAppIconography.current
     val spacing: AppSpacing
-        @Composable @ReadOnlyComposable get() = LocalAppSpacing.current
+        @Composable @ReadOnlyComposable
+        get() = LocalAppSpacing.current
     val typography: AppTypography
-        @Composable @ReadOnlyComposable get() = LocalAppTypography.current
+        @Composable @ReadOnlyComposable
+        get() = LocalAppTypography.current
 }
 
 private val LocalAppColors =

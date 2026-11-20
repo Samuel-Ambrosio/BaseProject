@@ -12,24 +12,25 @@ object AppLogger : Logger {
         set(value) {
             field = value
             if (value.isNotNull()) {
-                unsentMessages.forEach { (type, time, message, throwable) ->
-                    val newMessage = "Stacked message: [$time] $message"
-                    if (throwable.isNotNull()) {
-                        when (type) {
-                            MessageInfo.Type.VERBOSE -> value.v(throwable, newMessage)
-                            MessageInfo.Type.DEBUG -> value.d(throwable, newMessage)
-                            MessageInfo.Type.INFO -> value.i(throwable, newMessage)
-                            MessageInfo.Type.WARNING -> value.w(throwable, newMessage)
-                            MessageInfo.Type.ERROR -> value.e(throwable, newMessage)
+                unsentMessages.forEach { info ->
+                    val newMessage = "Stacked message: [${info.time}] ${info.message}"
+                    if (info.throwable.isNotNull()) {
+                        when (info.type) {
+                            MessageInfo.Type.VERBOSE -> value.v(info.throwable, newMessage)
+                            MessageInfo.Type.DEBUG -> value.d(info.throwable, newMessage)
+                            MessageInfo.Type.INFO -> value.i(info.throwable, newMessage)
+                            MessageInfo.Type.WARNING -> value.w(info.throwable, newMessage)
+                            MessageInfo.Type.ERROR -> value.e(info.throwable, newMessage)
                         }
-                    } else
-                        when (type) {
+                    } else {
+                        when (info.type) {
                             MessageInfo.Type.VERBOSE -> value.v(newMessage)
                             MessageInfo.Type.DEBUG -> value.d(newMessage)
                             MessageInfo.Type.INFO -> value.i(newMessage)
                             MessageInfo.Type.WARNING -> value.w(newMessage)
                             MessageInfo.Type.ERROR -> value.e(newMessage)
                         }
+                    }
                 }
                 unsentMessages.clear()
             }

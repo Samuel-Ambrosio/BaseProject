@@ -6,6 +6,7 @@ import com.samuelav.presentation.analytics.base.ScreenAnalytics
 import org.koin.compose.koinInject
 
 @Composable
+@Suppress("UnusedParameter", "UnusedPrivateProperty")
 fun AdvertBanner(modifier: Modifier = Modifier) {
     val screenAnalytics: ScreenAnalytics = koinInject()
 

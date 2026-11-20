@@ -7,19 +7,19 @@ import com.samuelav.domain.model.utils.debug.AppLogger
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 
-open class App: Application() {
+open class App : Application() {
     // TODO: Remove '//' after google-services.json file is added
-    //private val timberTree: Timber.Tree by lazy {
-        //CrashReportingTree(FirebaseCrashlytics.getInstance())
-    //}
+    // private val timberTree: Timber.Tree by lazy {
+    // CrashReportingTree(FirebaseCrashlytics.getInstance())
+    // }
 
     override fun onCreate() {
         super.onCreate()
 
         // TODO: Remove '//' after google-services.json file is added
-        //FirebaseApp.initializeApp(this)
+        // FirebaseApp.initializeApp(this)
 
-        //Timber.plant(timberTree)
+        // Timber.plant(timberTree)
         AppLogger.logger = TimberLogger
 
         startKoin {

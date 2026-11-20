@@ -6,7 +6,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.Icon
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -41,10 +45,14 @@ fun <T> DropdownSelector(
                 Icon(
                     modifier = Modifier.size(16.dp),
                     painter =
-                        if (isDropdownMenuExpanded) icons.chevronUp.painter
-                        else icons.chevronDown.painter,
+                    if (isDropdownMenuExpanded) {
+                        icons.chevronUp.painter
+                    } else {
+                        icons.chevronDown.painter
+                    },
                     contentDescription = null,
-                    tint = colors.onSurface)
+                    tint = colors.onSurface
+                )
             }
         }
 
@@ -58,7 +66,8 @@ fun <T> DropdownSelector(
                         isDropdownMenuExpanded = !isDropdownMenuExpanded
                         onItemSelected(it.first)
                     },
-                    content = { BodySmallRegular(text = it.second) })
+                    content = { BodySmallRegular(text = it.second) }
+                )
             }
         }
     }

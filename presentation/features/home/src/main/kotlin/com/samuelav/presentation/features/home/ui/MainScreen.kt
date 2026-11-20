@@ -8,11 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.samuelav.presentation.common.app.AppState
 import com.samuelav.presentation.common.extensions.handleErrorMessage
 import com.samuelav.presentation.common.ui.base.CommandHandler
 import com.samuelav.presentation.common.ui.composables.base.Heading1

@@ -37,14 +37,16 @@ fun Dialog(
                         modifier = Modifier.weight(1f),
                         onClick = onDismiss,
                         borderColor = colors.onSurface.copy(alpha = 0.1f),
-                        content = { ButtonText(text = it) })
+                        content = { ButtonText(text = it) }
+                    )
                 }
 
                 confirmButtonText?.let {
                     AppButton(
                         modifier = Modifier.weight(1f),
                         onClick = onConfirm,
-                        content = { ButtonText(text = it, color = colors.onPrimary) })
+                        content = { ButtonText(text = it, color = colors.onPrimary) }
+                    )
                 }
             }
         },
@@ -52,9 +54,11 @@ fun Dialog(
             BodyLargeBold(
                 modifier = Modifier.fillMaxWidth(),
                 text = title,
-                textAlign = TextAlign.Center)
+                textAlign = TextAlign.Center
+            )
         },
         text = text,
         shape = shapes.large,
-        backgroundColor = colors.surface)
+        backgroundColor = colors.surface
+    )
 }
