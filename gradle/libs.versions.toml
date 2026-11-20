@@ -1,49 +1,50 @@
 [versions]
 #Project
 compileSdk = "37"
+compileSdkMinor = "2"
 targetSdk = "37"
 minSdk = "26"
 jvmTarget = "25"
 
 #Gradle
-androidGradlePlugin = "9.4.0"
-versionsGradlePlugin = "0.54.0"
-crashlyticsGradlePlugin = "3.0.7"
+androidGradlePlugin = "9.5.2"
+versionsGradlePlugin = "0.67.0"
+crashlyticsGradlePlugin = "3.0.8"
 detekt = "2.0.0-alpha.6"
 
 #Kotlin
-kotlinCore = "2.4.10"
+kotlinCore = "2.4.21"
 kotlinCoroutines = "1.11.0"
-kotlinSerializationCore = "1.11.0"
-ksp = "2.3.11"
+kotlinSerializationCore = "1.13.0"
+ksp = "2.3.14"
 
 #Android
 desugarJdkLibs = "2.1.5"
 
 #AndroidX
-coreKtx = "1.19.0"
-lifecycle = "2.11.0"
-compose = "2026.08.00"
-composeNavigation3 = "1.1.6"
-composeNavigation3ViewModel = "2.11.0"
+coreKtx = "1.19.1"
+lifecycle = "2.11.1"
+compose = "2026.11.01"
+composeNavigation3 = "1.2.2"
+composeNavigation3ViewModel = "2.11.1"
 composeConstraint = "1.1.2"
 splashScreen = "1.2.0"
-room = "2.8.4"
-dataStore = "1.2.1"
+room = "2.8.5"
+dataStore = "1.3.0"
 
 #Debug
 timber = "5.0.1"
 
 #Google
 material = "1.14.0"
-services = "4.5.0"
+services = "4.6.0"
 servicesAds = "25.4.0"
-firebase = "34.17.0"
+firebase = "35.2.0"
 
 #Other
 koinCore = "4.2.2"
 retrofitCore = "3.0.0"
-okHttp3Interceptor = "5.4.0"
+okHttp = "5.5.1"
 moshi = "1.15.2"
 
 #Test
@@ -93,7 +94,7 @@ google-services-ads = { group = "com.google.android.gms", name = "play-services-
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitCore" }
 retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofitCore" }
 
-okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp3Interceptor" }
+okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp" }
 
 moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
 moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }

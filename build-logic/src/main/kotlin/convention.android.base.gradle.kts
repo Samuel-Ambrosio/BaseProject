@@ -14,6 +14,7 @@ plugins {
 
 extensions.configure<CommonExtension> {
     compileSdk = libs.intVersion("compileSdk")
+    compileSdkMinor = libs.intVersion("compileSdkMinor")
 
     defaultConfig.apply {
         minSdk = libs.intVersion("minSdk")
