@@ -6,7 +6,7 @@ import kotlinx.coroutines.CoroutineScope
 
 @Composable
 fun <Command> CommandHandler(
-    viewModel: BaseViewModel<*, Command>,
+    viewModel: CommandSource<Command>,
     onCommand: suspend CoroutineScope.(Command) -> Unit
 ) {
     LaunchedEffect(viewModel) { viewModel.command.collect { onCommand(it) } }
