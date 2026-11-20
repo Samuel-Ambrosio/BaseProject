@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.utils.debug
+package com.samuelav.app.utils.debug
 
 import com.samuelav.domain.model.utils.debug.Logger
 import timber.log.Timber

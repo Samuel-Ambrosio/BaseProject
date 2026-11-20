@@ -34,7 +34,8 @@ dependencyResolutionManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "BaseProject"
+// Configured in gradle.properties (app.name)
+rootProject.name = providers.gradleProperty("app.name").get().replace(Regex("\\s+"), "")
 include(
     listOf(
         ":app",

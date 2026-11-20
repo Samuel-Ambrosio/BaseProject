@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.utils.analytics
+package com.samuelav.app.utils.analytics
 
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics

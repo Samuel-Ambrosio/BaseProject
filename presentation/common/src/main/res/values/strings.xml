@@ -1,7 +1,6 @@
 <resources>
     <string name="ad_id_banner" translatable="false"></string>
     <string name="app_email_contact" translatable="false"></string>
-    <string name="app_name" translatable="false">BaseProject</string>
     <string name="app_share_link" translatable="false"></string>
     <string name="developed_by">Developed by Samuel A.V.</string>
     <string name="nav_item_home">Home</string>

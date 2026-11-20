@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.ui.activity
+package com.samuelav.app.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.samuelav.baseproject.ui.AppScaffold
+import com.samuelav.app.ui.AppScaffold
 import com.samuelav.presentation.common.extensions.setAppThemeContent
 
 class MainActivity : ComponentActivity() {

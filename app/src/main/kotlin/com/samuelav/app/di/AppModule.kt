@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.di
+package com.samuelav.app.di
 
 import com.samuelav.presentation.common.app.configuration.AppConfiguration
 import org.koin.dsl.module

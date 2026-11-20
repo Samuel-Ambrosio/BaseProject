@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.di
+package com.samuelav.app.di
 
 import com.samuelav.data.repositoryimpl.di.repositoryModule
 import com.samuelav.data.sourcesImpl.local.di.localModule

@@ -1,7 +1,7 @@
 import com.samuelav.buildlogic.Namespaces
 
 plugins {
-    id("baseproject.android.library")
+    id("convention.android.library")
     alias(libs.plugins.ksp)
 }
 

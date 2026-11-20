@@ -9,7 +9,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 // The non-generic CommonExtension of AGP 9 exposes no DSL lambdas, hence the `.apply {}` blocks.
 
 plugins {
-    id("baseproject.detekt")
+    id("convention.detekt")
 }
 
 extensions.configure<CommonExtension> {

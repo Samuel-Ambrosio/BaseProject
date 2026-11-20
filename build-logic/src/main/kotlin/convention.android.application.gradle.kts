@@ -3,9 +3,9 @@ import com.samuelav.buildlogic.libs
 
 plugins {
     id("com.android.application")
-    id("baseproject.android.base")
-    id("baseproject.android.compose")
-    id("baseproject.android.flavors")
+    id("convention.android.base")
+    id("convention.android.compose")
+    id("convention.android.flavors")
 }
 
 android {

@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.ui
+package com.samuelav.app.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column

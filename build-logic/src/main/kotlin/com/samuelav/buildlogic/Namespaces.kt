@@ -1,7 +1,7 @@
 package com.samuelav.buildlogic
 
 object Namespaces {
-    const val App = "com.samuelav.baseproject"
+    const val App = "com.samuelav.app"
 
     object Data {
         object SourcesImpl {

@@ -1,8 +1,8 @@
-package com.samuelav.baseproject
+package com.samuelav.app
 
 import android.app.Application
-import com.samuelav.baseproject.di.appComponent
-import com.samuelav.baseproject.utils.debug.TimberLogger
+import com.samuelav.app.di.appComponent
+import com.samuelav.app.utils.debug.TimberLogger
 import com.samuelav.domain.model.utils.debug.AppLogger
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin

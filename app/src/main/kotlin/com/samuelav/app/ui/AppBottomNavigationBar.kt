@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.ui
+package com.samuelav.app.ui
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon

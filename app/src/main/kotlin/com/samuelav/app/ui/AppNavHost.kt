@@ -1,4 +1,4 @@
-package com.samuelav.baseproject.ui
+package com.samuelav.app.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

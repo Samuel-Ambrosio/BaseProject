@@ -1,7 +1,7 @@
 import com.samuelav.buildlogic.Namespaces
 
 plugins {
-    id("baseproject.android.application")
+    id("convention.android.application")
     // TODO: Remove '//' after google-services.json file is added
     //alias(libs.plugins.googleServices)
     //alias(libs.plugins.crashlytics)
@@ -10,8 +10,14 @@ plugins {
 android {
     namespace = Namespaces.App
 
+    buildFeatures {
+        resValues = true
+    }
+
+    // App identity is configured in gradle.properties
     defaultConfig {
-        applicationId = "com.samuelav.baseproject"
+        applicationId = providers.gradleProperty("app.applicationId").get()
+        resValue("string", "app_name", providers.gradleProperty("app.name").get().replace("'", "\\'"))
         versionCode = 1
         versionName = "0.0.1"
     }

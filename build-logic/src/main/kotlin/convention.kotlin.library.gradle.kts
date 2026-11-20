@@ -5,7 +5,7 @@ import com.samuelav.buildlogic.library
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
-    id("baseproject.detekt")
+    id("convention.detekt")
 }
 
 kotlin {

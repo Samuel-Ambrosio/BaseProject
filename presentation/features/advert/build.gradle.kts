@@ -1,7 +1,7 @@
 import com.samuelav.buildlogic.Namespaces
 
 plugins {
-    id("baseproject.android.feature")
+    id("convention.android.feature")
 }
 
 android {
