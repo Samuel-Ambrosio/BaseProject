@@ -12,7 +12,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.samuelav.presentation.common.R
 import com.samuelav.presentation.common.ui.theme.AppTheme.animations
 import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.common.ui.theme.AppTheme.icons
@@ -42,7 +44,7 @@ fun AppTopBar(
                     modifier = Modifier.size(16.dp),
                     painter = icons.arrowBack.painter,
                     tint = colors.onSurface,
-                    contentDescription = null,
+                    contentDescription = stringResource(id = R.string.content_description_navigate_up),
                 )
             }
         }

@@ -160,6 +160,29 @@ Add `-PdetektAutoCorrect=true` to let the ktlint ruleset fix issues in place. Sh
 > [!NOTE]
 > The versions plugin supports neither parallel execution nor the configuration cache, which the task opts out of.
 
+### 🧪 Tests
+
+| Kind | Where | Tools |
+| --- | --- | --- |
+| Unit | Every module, `src/test` (`Result`, `AppLogger`, `cachedRemoteResource`, use cases, repositories, base ViewModels, `NavBackStack` extensions, `MainViewModel`) | JUnit 4, `kotlin.test`, coroutines-test, Turbine, hand-written fakes |
+| Integration | `data:sourcesImpl:remote` (the real `remoteModule` Retrofit/Moshi stack against MockWebServer, Moshi decoding) | MockWebServer |
+| Koin graph | `app/src/test/.../DIModulesTest.kt`: resolves every definition of `appComponent`, with Firebase and the network replaced | Robolectric, `checkKoinModules`, MockK |
+| Screen | `presentation:features:*`, `src/test` (Compose UI on the JVM, Koin test modules) | Robolectric, Compose UI test |
+| Screenshot regression | `presentation/features/home/src/test/screenshots/` (reference images in the repo) | Roborazzi |
+| End-to-end | `app/src/androidTest`: launches `MainActivity` on a device with a fake HTTP backend (`E2ETestRunner` → `E2ETestApp`) | Compose UI test, Espresso |
+
+```bash
+# Unit, integration, Koin graph and screen tests (also part of CI)
+./gradlew testDevDebugUnitTest test
+
+# Screenshot regression: compare against the reference images / re-record them after an intended UI change
+./gradlew verifyRoborazziDebug
+./gradlew recordRoborazziDebug
+
+# End-to-end, needs a running emulator or device
+./gradlew connectedDevDebugAndroidTest
+```
+
 ### ⚙️ Continuous integration
 
 Every push/PR to `master` runs [`.github/workflows/ci.yml`](.github/workflows/ci.yml) on JDK 25: **Detekt**, **unit tests**, and a **`dev` debug assemble**.

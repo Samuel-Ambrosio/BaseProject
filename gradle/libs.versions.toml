@@ -51,6 +51,12 @@ moshi = "1.15.2"
 junit = "4.13.2"
 androidJunit = "1.3.0"
 androidEspresso = "3.7.0"
+androidTestCore = "1.7.0"
+androidTestRunner = "1.7.0"
+mockk = "1.14.12"
+robolectric = "4.18.1"
+roborazzi = "1.79.0"
+turbine = "1.2.1"
 
 [libraries]
 #Dependencies
@@ -94,6 +100,7 @@ google-services-ads = { group = "com.google.android.gms", name = "play-services-
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitCore" }
 retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofitCore" }
 
+okHttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp" }
 okHttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp" }
 
 moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
@@ -102,6 +109,18 @@ moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-code
 detekt-ktlint = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
 
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
+test-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlinCore" }
+test-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutines" }
+test-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+test-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+test-koin = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koinCore" }
+test-robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+test-roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
+test-roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi" }
+test-roborazzi-junit = { group = "io.github.takahirom.roborazzi", name = "roborazzi-junit-rule", version.ref = "roborazzi" }
+test-okHttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver3", version.ref = "okHttp" }
+test-android-core = { group = "androidx.test", name = "core-ktx", version.ref = "androidTestCore" }
+test-android-runner = { group = "androidx.test", name = "runner", version.ref = "androidTestRunner" }
 test-android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidJunit" }
 test-android-junit-compose = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 test-android-ui-compose = { group = "androidx.compose.ui", name = "ui-test-manifest" }
@@ -125,3 +144,4 @@ googleServices = { id = "com.google.gms.google-services", version.ref = "service
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsGradlePlugin" }
 checkVersions = { id = "com.github.ben-manes.versions", version.ref = "versionsGradlePlugin" }
 detekt = { id = "dev.detekt", version.ref = "detekt" }
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }

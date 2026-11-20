@@ -1,34 +1,34 @@
 package com.samuelav.presentation.features.home.ui
 
 import com.samuelav.domain.model.models.Todo
+import com.samuelav.domain.model.utils.Error
 import com.samuelav.domain.model.utils.fold
 import com.samuelav.domain.usecase.todo.GetAllTodosUseCase
-import com.samuelav.presentation.common.ui.base.BaseViewModel
-import kotlinx.coroutines.launch
+import com.samuelav.presentation.common.ui.base.ColdStateBaseViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.FlowCollector
 
 internal class MainViewModel(
     private val getAllTodosUseCase: GetAllTodosUseCase,
-) : BaseViewModel<MainState, MainCommand>(MainState()) {
-    init {
-        ioCoroutineScope.launch {
-            getAllTodosUseCase().fold(
-                isSuccess = { todos ->
-                    updateState { state -> state.copy(isLoading = false, todos = todos) }
-                },
-                isFailure = { error ->
-                    updateState { state -> state.copy(isLoading = false) }
-                    emitCommand(MainCommand.Error(error = error))
-                }
-            )
-        }
+    ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+) : ColdStateBaseViewModel<MainState, Nothing>(initialState = MainState.Loading, ioDispatcher = ioDispatcher) {
+
+    override suspend fun FlowCollector<MainState>.onInitState() {
+        emit(MainState.Loading)
+        getAllTodosUseCase().fold(
+            isSuccess = { todos -> emit(MainState.Ready(todos = todos)) },
+            isFailure = { error -> emit(MainState.Failure(error = error)) },
+        )
     }
+
+    fun retry() = retryInitState()
 }
 
-internal data class MainState(
-    val isLoading: Boolean = false,
-    val todos: List<Todo> = emptyList(),
-)
+internal sealed interface MainState {
+    data object Loading : MainState
 
-internal sealed interface MainCommand {
-    data class Error(val error: com.samuelav.domain.model.utils.Error) : MainCommand
+    data class Ready(val todos: List<Todo>) : MainState
+
+    data class Failure(val error: Error) : MainState
 }

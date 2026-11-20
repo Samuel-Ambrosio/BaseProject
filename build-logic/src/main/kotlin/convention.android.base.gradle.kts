@@ -43,6 +43,10 @@ dependencies {
     "coreLibraryDesugaring"(libs.library("android.desugar.jdk.libs"))
 
     "testImplementation"(libs.library("test.junit"))
+    "testImplementation"(libs.library("test.kotlin"))
+    "testImplementation"(libs.library("test.coroutines"))
+    "testImplementation"(libs.library("test.turbine"))
+    "androidTestImplementation"(libs.library("test.android.runner"))
     "androidTestImplementation"(libs.library("test.android.junit"))
     "androidTestImplementation"(libs.library("test.android.espresso"))
 }

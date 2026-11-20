@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.googleServices) apply false
     alias(libs.plugins.crashlytics) apply false
     alias(libs.plugins.detekt) apply false
+    alias(libs.plugins.roborazzi) apply false
     alias(libs.plugins.checkVersions)
 }
 

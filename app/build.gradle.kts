@@ -20,7 +20,10 @@ android {
         resValue("string", "app_name", providers.gradleProperty("app.name").get().replace("'", "\\'"))
         versionCode = 1
         versionName = "0.0.1"
+        testInstrumentationRunner = "com.samuelav.app.E2ETestRunner"
     }
+
+    testOptions.unitTests.isIncludeAndroidResources = true
 }
 
 dependencies {
@@ -46,4 +49,15 @@ dependencies {
 
     // TODO: Remove '//' after google-services.json file and ad id are added
     //implementation(libs.google.services.ads)
+
+    testImplementation(platform(libs.google.firebase.bom))
+    testImplementation(libs.google.firebase.analytics)
+    testImplementation(libs.okHttp3)
+    testImplementation(libs.test.android.core)
+    testImplementation(libs.test.android.junit)
+    testImplementation(libs.test.koin)
+    testImplementation(libs.test.mockk)
+    testImplementation(libs.test.robolectric)
+
+    androidTestImplementation(libs.okHttp3)
 }

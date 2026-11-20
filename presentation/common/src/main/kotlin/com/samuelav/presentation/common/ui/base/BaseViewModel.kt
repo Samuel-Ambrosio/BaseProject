@@ -2,6 +2,7 @@ package com.samuelav.presentation.common.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -12,8 +13,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<State, Command>(initialState: State) : ViewModel(), CommandSource<Command> {
-    protected val ioCoroutineScope = CoroutineScope(viewModelScope.coroutineContext + Dispatchers.IO)
+abstract class BaseViewModel<State, Command>(
+    initialState: State,
+    ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+) : ViewModel(), CommandSource<Command> {
+    protected val ioCoroutineScope = CoroutineScope(viewModelScope.coroutineContext + ioDispatcher)
 
     private val _state = MutableStateFlow(initialState)
     private val _command = MutableSharedFlow<Command>()

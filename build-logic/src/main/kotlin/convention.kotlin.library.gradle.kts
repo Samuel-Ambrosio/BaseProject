@@ -17,4 +17,9 @@ kotlin {
 dependencies {
     implementation(libs.library("kotlin.coroutines.core"))
     implementation(libs.library("koin.core"))
+
+    testImplementation(libs.library("test.junit"))
+    testImplementation(libs.library("test.kotlin"))
+    testImplementation(libs.library("test.coroutines"))
+    testImplementation(libs.library("test.turbine"))
 }

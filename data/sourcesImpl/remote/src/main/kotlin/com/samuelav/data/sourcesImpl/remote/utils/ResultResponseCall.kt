@@ -11,7 +11,6 @@ import com.squareup.moshi.JsonDataException
 import com.squareup.moshi.JsonEncodingException
 import okhttp3.Request
 import okhttp3.ResponseBody
-import okio.EOFException
 import okio.Timeout
 import retrofit2.Call
 import retrofit2.Callback
@@ -52,7 +51,7 @@ internal class ResultResponseCall<S : Any>(
                             when (t) {
                                 is HttpException ->
                                     t.response()?.handleApiError(errorConverter = errorConverter)
-                                        ?: t.handleHttpException()
+                                        ?: t.code().toHttpError()
                                 is JsonDataException -> Error.JsonSyntax
                                 is JsonEncodingException -> Error.JsonSyntax
                                 is DateTimeParseException -> Error.DateTimeParse
@@ -80,27 +79,27 @@ internal class ResultResponseCall<S : Any>(
     override fun request(): Request = call.request()
     override fun timeout(): Timeout = call.timeout()
 
-    private fun HttpException.handleHttpException(): Error =
-        when (code()) {
+    private fun Int.toHttpError(): Error =
+        when (this) {
             400 -> Error.BadRequest
             403 -> Error.Forbidden
             404 -> Error.NotFound
             408 -> Error.Timeout
-            500 -> Error.Server
             502 -> Error.BadGateway
             503 -> Error.ServiceUnavailable
+            in 500..599 -> Error.Server
             else -> Error.Unknown
         }
 
     private fun <S> Response<S>.handleApiError(
         errorConverter: Converter<ResponseBody, NetworkApiError>
-    ): Error =
-        try {
-            val apiError = errorBody()?.let { errorConverter.convert(it)?.toError() }
-            if (apiError?.errors.isNullOrEmpty()) Error.Server else apiError
-        } catch (_: EOFException) {
-            Error.Server
-        } catch (@Suppress("TooGenericExceptionCaught") _: Exception) {
-            Error.Unknown
-        }
+    ): Error {
+        val apiError =
+            try {
+                errorBody()?.let { errorConverter.convert(it)?.toError() }
+            } catch (@Suppress("TooGenericExceptionCaught") _: Exception) {
+                null
+            }
+        return if (apiError?.errors.isNullOrEmpty()) code().toHttpError() else apiError
+    }
 }

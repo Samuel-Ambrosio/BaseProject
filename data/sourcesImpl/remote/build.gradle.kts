@@ -25,4 +25,6 @@ dependencies {
     ksp(libs.moshi.kotlin.codegen)
 
     implementation(libs.okHttp3.interceptor)
+
+    testImplementation(libs.test.okHttp.mockwebserver)
 }

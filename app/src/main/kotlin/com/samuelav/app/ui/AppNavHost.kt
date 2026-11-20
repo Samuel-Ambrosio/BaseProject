@@ -27,7 +27,7 @@ internal fun AppNavHost(appState: AppState, modifier: Modifier) {
         modifier = modifier,
         backStack = appState.navBackStack,
     ) {
-        homeNavEntries(appState = appState)
+        homeNavEntries()
 
         searchNavEntries()
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="content_description_navigate_up">Volver atrás</string>
     <string name="developed_by">Developed by Samuel A.V.</string>
     <string name="nav_item_home">Inicio</string>
     <string name="nav_item_more">Más</string>
@@ -16,4 +17,5 @@
     <string name="result_error_service_unavailable">Servicio no disponible.</string>
     <string name="result_error_timeout">Servicio no disponible. Por favor, inténtelo de nuevo más tarde.</string>
     <string name="result_error_unknown">Algo salió mal. Por favor, inténtelo de nuevo más tarde.</string>
+    <string name="retry">Reintentar</string>
 </resources>
