@@ -1,11 +1,14 @@
-import com.samuelav.buildsrc.app.Namespaces
+import com.samuelav.buildlogic.Namespaces
 
-plugins { AndroidComposeLibrary }
+plugins {
+    id("baseproject.android.compose.library")
+}
 
 android {
     namespace = Namespaces.Presentation.Analytics
 }
 
 dependencies {
+    implementation(platform(libs.google.firebase.bom))
     implementation(libs.google.firebase.analytics)
 }

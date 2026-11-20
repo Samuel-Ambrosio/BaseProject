@@ -3,16 +3,15 @@ package com.samuelav.presentation.common.ui.composables.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.AlertDialog
-import androidx.compose.material.MaterialTheme.colors
-import androidx.compose.material.MaterialTheme.shapes
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import com.samuelav.presentation.common.ui.composables.base.BodyLargeBold
 import com.samuelav.presentation.common.ui.composables.base.ButtonText
+import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 import com.samuelav.presentation.common.ui.theme.AppTheme.spacing
 
 @Composable
@@ -26,9 +25,10 @@ fun Dialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        buttons = {
+        // Material 3 has no free-form `buttons` slot: both buttons go in a full-width row
+        confirmButton = {
             Row(
-                modifier = Modifier.padding(start = spacing.l, end = spacing.l, bottom = spacing.m),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing.xs),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -59,6 +59,6 @@ fun Dialog(
         },
         text = text,
         shape = shapes.large,
-        backgroundColor = colors.surface
+        containerColor = colors.surface
     )
 }

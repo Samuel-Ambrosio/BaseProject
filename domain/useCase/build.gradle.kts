@@ -1,8 +1,8 @@
-import com.samuelav.buildsrc.app.Modules
-
-plugins { KotlinLibrary }
+plugins {
+    id("baseproject.kotlin.library")
+}
 
 dependencies {
-    implementation(project(Modules.Domain.Model))
-    implementation(project(Modules.Domain.Repository))
+    implementation(projects.domain.model)
+    implementation(projects.domain.repository)
 }

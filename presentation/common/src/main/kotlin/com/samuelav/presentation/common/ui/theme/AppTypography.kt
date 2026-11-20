@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.samuelav.presentation.common.R
-import androidx.compose.material.Typography as MaterialTypography
+import androidx.compose.material3.Typography as MaterialTypography
 
 @ConsistentCopyVisibility
 data class AppTypography internal constructor(
@@ -75,15 +75,14 @@ data class AppTypography internal constructor(
         button = button.copy(fontFamily = fontFamily),
         materialTypography =
         MaterialTypography(
-            defaultFontFamily = fontFamily,
-            h1 = headingH1,
-            h2 = headingH2,
-            subtitle1 = bodyLargeBold,
-            subtitle2 = bodyMediumBold,
-            body1 = bodyLargeRegular,
-            body2 = bodyMediumRegular,
-            button = button,
-            caption = bodySmallRegular,
+            headlineLarge = headingH1.copy(fontFamily = fontFamily),
+            headlineMedium = headingH2.copy(fontFamily = fontFamily),
+            titleLarge = bodyLargeBold.copy(fontFamily = fontFamily),
+            titleMedium = bodyMediumBold.copy(fontFamily = fontFamily),
+            bodyLarge = bodyLargeRegular.copy(fontFamily = fontFamily),
+            bodyMedium = bodyMediumRegular.copy(fontFamily = fontFamily),
+            bodySmall = bodySmallRegular.copy(fontFamily = fontFamily),
+            labelLarge = button.copy(fontFamily = fontFamily),
         ),
     )
 }

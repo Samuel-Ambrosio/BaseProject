@@ -1,12 +1,16 @@
-import com.samuelav.buildsrc.app.Modules
-import com.samuelav.buildsrc.app.Namespaces
+import com.samuelav.buildlogic.Namespaces
 
-plugins { AndroidComposeLibrary }
+plugins {
+    id("baseproject.android.compose.library")
+}
 
 android {
     namespace = Namespaces.Presentation.Common
 }
 
 dependencies {
-    implementation(project(Modules.Domain.Model))
+    implementation(projects.domain.model)
+
+    // XML BaseTheme (Theme.MaterialComponents) used by the splash screen
+    implementation(libs.google.material)
 }

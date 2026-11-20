@@ -1,7 +1,6 @@
 package com.samuelav.presentation.common.app
 
-import androidx.compose.material.ScaffoldState
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
@@ -19,7 +18,7 @@ data class AppState(
     val appConfiguration: AppConfiguration,
     val appScope: CoroutineScope,
     val navBackStack: NavBackStack<NavKey>,
-    val scaffoldState: ScaffoldState,
+    val snackbarHostState: SnackbarHostState,
 )
 
 @Composable
@@ -27,13 +26,13 @@ fun rememberAppState(
     appConfiguration: AppConfiguration = koinInject(),
     appScope: CoroutineScope = rememberCoroutineScope(),
     navBackStack: NavBackStack<NavKey> = rememberNavBackStack(AppNavKey.Home.Main),
-    scaffoldState: ScaffoldState = rememberScaffoldState(),
+    snackbarHostState: SnackbarHostState = remember { SnackbarHostState() },
 ): AppState =
     remember(appConfiguration) {
         AppState(
             appConfiguration = appConfiguration,
             appScope = appScope,
             navBackStack = navBackStack,
-            scaffoldState = scaffoldState,
+            snackbarHostState = snackbarHostState,
         )
     }

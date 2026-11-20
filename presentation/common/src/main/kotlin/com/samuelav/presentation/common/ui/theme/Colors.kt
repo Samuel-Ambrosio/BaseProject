@@ -1,7 +1,7 @@
 package com.samuelav.presentation.common.ui.theme
 
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
 internal val celticBlueLight = Color(0xFF335FD1)
@@ -27,12 +27,12 @@ internal val BaseLightAppColors =
         success = americanGreen,
         warning = chromeYellow,
         error = darkPastelRed,
-        materialColors =
-        lightColors(
+        primaryVariant = blueberry,
+        secondaryVariant = azureWhite,
+        colorScheme =
+        lightColorScheme(
             primary = celticBlueLight,
-            primaryVariant = blueberry,
             secondary = azureWhite,
-            secondaryVariant = azureWhite,
             background = Color.White,
             surface = lotion,
             onPrimary = Color.White,
@@ -48,12 +48,12 @@ internal val BaseDarkAppColors =
         success = pastelGreen,
         warning = buffYellow,
         error = melonRed,
-        materialColors =
-        darkColors(
+        primaryVariant = celticBlueLight,
+        secondaryVariant = azureWhite,
+        colorScheme =
+        darkColorScheme(
             primary = blueberry,
-            primaryVariant = celticBlueLight,
             secondary = azureWhite,
-            secondaryVariant = azureWhite,
             background = eerieBlack,
             surface = raisinBlack,
             onPrimary = Color.White,

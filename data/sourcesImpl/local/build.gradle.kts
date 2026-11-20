@@ -1,9 +1,7 @@
-import com.samuelav.buildsrc.app.Modules
-import com.samuelav.buildsrc.app.Namespaces
-import com.samuelav.buildsrc.plugins.extensions.ksp
+import com.samuelav.buildlogic.Namespaces
 
 plugins {
-    AndroidLibrary
+    id("baseproject.android.library")
     alias(libs.plugins.ksp)
 }
 
@@ -16,8 +14,8 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(Modules.Domain.Model))
-    implementation(project(Modules.Data.Sources))
+    implementation(projects.domain.model)
+    implementation(projects.data.sources)
 
     implementation(libs.androidx.room.core.runtime)
     implementation(libs.androidx.room.core.ktx)

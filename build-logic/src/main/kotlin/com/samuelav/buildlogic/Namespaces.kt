@@ -1,4 +1,4 @@
-package com.samuelav.buildsrc.app
+package com.samuelav.buildlogic
 
 object Namespaces {
     const val App = "com.samuelav.baseproject"

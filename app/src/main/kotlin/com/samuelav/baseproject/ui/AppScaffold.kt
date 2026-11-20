@@ -4,10 +4,10 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme.shapes
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Snackbar
-import androidx.compose.material.SnackbarHost
+import androidx.compose.material3.MaterialTheme.shapes
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.samuelav.presentation.common.app.AppState
@@ -27,7 +27,6 @@ internal fun AppScaffold(
 
     Scaffold(
         modifier = modifier,
-        scaffoldState = appState.scaffoldState,
         bottomBar = {
             AnimatedVisibility(
                 visible = isBottomBarVisible,
@@ -38,11 +37,11 @@ internal fun AppScaffold(
             }
         },
         snackbarHost = {
-            SnackbarHost(it) { data ->
+            SnackbarHost(appState.snackbarHostState) { data ->
                 Snackbar(
                     snackbarData = data,
                     shape = shapes.medium,
-                    backgroundColor = colors.primary,
+                    containerColor = colors.primary,
                 )
             }
         },

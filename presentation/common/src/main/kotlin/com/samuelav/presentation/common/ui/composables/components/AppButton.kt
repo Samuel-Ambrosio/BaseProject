@@ -1,13 +1,13 @@
 package com.samuelav.presentation.common.ui.composables.components
 
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme.colors
-import androidx.compose.material.MaterialTheme.shapes
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.samuelav.presentation.common.ui.theme.AppTheme.colors
 
 @Composable
 fun AppButton(
@@ -19,8 +19,8 @@ fun AppButton(
     Button(
         modifier = modifier,
         onClick = onClick,
-        shape = shapes.large,
-        colors = ButtonDefaults.buttonColors(backgroundColor = backgroundColor),
+        shape = MaterialTheme.shapes.large,
+        colors = ButtonDefaults.buttonColors(containerColor = backgroundColor),
         content = content
     )
 }

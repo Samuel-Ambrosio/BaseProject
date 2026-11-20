@@ -3,9 +3,9 @@ package com.samuelav.presentation.common.ui.composables.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.DropdownMenu
-import androidx.compose.material.DropdownMenuItem
-import androidx.compose.material.Icon
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -62,11 +62,11 @@ fun <T> DropdownSelector(
         ) {
             menuItems.forEach {
                 DropdownMenuItem(
+                    text = { BodySmallRegular(text = it.second) },
                     onClick = {
                         isDropdownMenuExpanded = !isDropdownMenuExpanded
                         onItemSelected(it.first)
                     },
-                    content = { BodySmallRegular(text = it.second) }
                 )
             }
         }

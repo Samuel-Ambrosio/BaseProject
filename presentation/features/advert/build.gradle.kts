@@ -1,6 +1,8 @@
-import com.samuelav.buildsrc.app.Namespaces
+import com.samuelav.buildlogic.Namespaces
 
-plugins { Features }
+plugins {
+    id("baseproject.android.feature")
+}
 
 android {
     namespace = Namespaces.Presentation.Features.Advert

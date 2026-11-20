@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1080" viewBox="0 0 1900 1080">
+<rect width="1900" height="1080" fill="#FFFFFF"/>
+<text x="40" y="48" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="start" fill="#0F172A">BaseProject · plugins and module dependencies</text>
+<text x="40" y="76" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" text-anchor="start" fill="#475569">Gradle 9.7 · AGP 9.4.0 · Kotlin 2.4.10 · JDK 25 (daemon + toolchain) · configuration cache · settings: includeBuild("build-logic"), foojay, TYPESAFE_PROJECT_ACCESSORS</text>
+<rect x="30" y="100" width="760" height="770" rx="16" fill="#F8FAFC" stroke="#E2E8F0"/>
+<text x="54" y="134" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start" fill="#0F172A">Convention plugins · build-logic/</text>
+<text x="54" y="156" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#475569">Arrows mean “applies”; below each name, what it configures</text>
+<path d="M180,251.0 C180,410.0 405,410.0 405,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="400,561.0 410,561.0 405,570.0" fill="#475569" opacity="1.0"/>
+<path d="M220,251.0 C220,345.0 375,345.0 375,439.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="370,431.0 380,431.0 375,440.0" fill="#475569" opacity="1.0"/>
+<path d="M150,251.0 C150,345.0 155,345.0 155,439.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="150,431.0 160,431.0 155,440.0" fill="#475569" opacity="1.0"/>
+<path d="M605,251.0 C605,280.0 605,280.0 605,309.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="600,301.0 610,301.0 605,310.0" fill="#475569" opacity="1.0"/>
+<path d="M635,381.0 C635,410.0 655,410.0 655,439.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="650,431.0 660,431.0 655,440.0" fill="#475569" opacity="1.0"/>
+<path d="M575,381.0 C575,410.0 435,410.0 435,439.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="430,431.0 440,431.0 435,440.0" fill="#475569" opacity="1.0"/>
+<path d="M655,511.0 C655,540.0 445,540.0 445,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="440,561.0 450,561.0 445,570.0" fill="#475569" opacity="1.0"/>
+<path d="M405,641.0 C405,680.0 500,680.0 500,719.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="495,711.0 505,711.0 500,720.0" fill="#475569" opacity="1.0"/>
+<path d="M655,641.0 C655,680.0 560,680.0 560,719.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="1.0"/>
+<polygon points="555,711.0 565,711.0 560,720.0" fill="#475569" opacity="1.0"/>
+<rect x="80.0" y="189.0" width="280" height="62" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="220" y="214" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.application</text>
+<text x="220" y="235" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">com.android.application · targetSdk · R8</text>
+<rect x="470.0" y="189.0" width="270" height="62" rx="10" fill="#FFEDD5" stroke="#EA580C" stroke-width="2"/>
+<text x="605" y="214" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.feature</text>
+<text x="605" y="235" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">+ model, useCase, analytics, common</text>
+<rect x="490.0" y="319.0" width="230" height="62" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="605" y="355" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.compose.library</text>
+<rect x="40.0" y="449.0" width="230" height="62" rx="10" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="155" y="474" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.flavors</text>
+<text x="155" y="495" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">dev / pre / pro · BuildConfig</text>
+<rect x="290.0" y="449.0" width="230" height="62" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="405" y="474" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.compose</text>
+<text x="405" y="495" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.plugin.compose · deps</text>
+<rect x="540.0" y="449.0" width="230" height="62" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="655" y="474" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.library</text>
+<text x="655" y="495" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">com.android.library · serialization</text>
+<rect x="290.0" y="579.0" width="230" height="62" rx="10" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="405" y="604" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">android.base</text>
+<text x="405" y="625" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">SDKs · desugaring · toolchain 25</text>
+<rect x="540.0" y="579.0" width="230" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="655" y="604" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">kotlin.library</text>
+<text x="655" y="625" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.jvm · serialization · toolchain</text>
+<rect x="405.0" y="729.0" width="250" height="62" rx="10" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="530" y="754" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">detekt</text>
+<text x="530" y="775" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">dev.detekt + ktlint · config/detekt</text>
+<text x="54" y="852" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#475569">Full IDs: baseproject.&lt;name&gt; · AGP/KGP are compileOnly; the root build.gradle.kts provides the classpath (apply false)</text>
+<rect x="820" y="100" width="1050" height="770" rx="16" fill="#F8FAFC" stroke="#E2E8F0"/>
+<text x="844" y="134" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start" fill="#0F172A">Modules · implementation(projects.…)</text>
+<text x="844" y="156" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#475569">Color shows the convention plugin applied</text>
+<path d="M1335,246.0 C1335,267.5 965,267.5 965,289.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="960,281.0 970,281.0 965,290.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,267.5 1215,267.5 1215,289.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1210,281.0 1220,281.0 1215,290.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,267.5 1475,267.5 1475,289.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1470,281.0 1480,281.0 1475,290.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,267.5 1720,267.5 1720,289.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1715,281.0 1725,281.0 1720,290.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,337.5 965,337.5 965,429.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="960,421.0 970,421.0 965,430.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,337.5 1215,337.5 1215,429.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1210,421.0 1220,421.0 1215,430.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,337.5 1600,337.5 1600,429.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1595,421.0 1605,421.0 1600,430.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,407.5 1090,407.5 1090,569.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1085,561.0 1095,561.0 1090,570.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,407.5 1600,407.5 1600,569.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1595,561.0 1605,561.0 1600,570.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,462.5 1250,462.5 1250,679.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1245,671.0 1255,671.0 1250,680.0" fill="#2563EB" opacity="0.25"/>
+<path d="M1335,246.0 C1335,512.5 1335,512.5 1335,779.0" fill="none" stroke="#2563EB" stroke-width="1.1" opacity="0.25"/>
+<polygon points="1330,771.0 1340,771.0 1335,780.0" fill="#2563EB" opacity="0.25"/>
+<path d="M935,361.0 C935,395.0 925,395.0 925,429.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="920,421.0 930,421.0 925,430.0" fill="#475569" opacity="0.85"/>
+<path d="M985,361.0 C985,395.0 1175,395.0 1175,429.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1170,421.0 1180,421.0 1175,430.0" fill="#475569" opacity="0.85"/>
+<path d="M1005,361.0 C1005,465.0 1030,465.0 1030,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1025,561.0 1035,561.0 1030,570.0" fill="#475569" opacity="0.85"/>
+<path d="M1025,361.0 C1025,570.0 1240,570.0 1240,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1235,771.0 1245,771.0 1240,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1195,361.0 C1195,395.0 1005,395.0 1005,429.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1000,421.0 1010,421.0 1005,430.0" fill="#475569" opacity="0.85"/>
+<path d="M1215,361.0 C1215,395.0 1255,395.0 1255,429.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1250,421.0 1260,421.0 1255,430.0" fill="#475569" opacity="0.85"/>
+<path d="M1235,361.0 C1235,465.0 1070,465.0 1070,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1065,561.0 1075,561.0 1070,570.0" fill="#475569" opacity="0.85"/>
+<path d="M1255,361.0 C1255,570.0 1265,570.0 1265,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1260,771.0 1270,771.0 1265,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1445,361.0 C1445,465.0 1570,465.0 1570,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1565,561.0 1575,561.0 1570,570.0" fill="#475569" opacity="0.85"/>
+<path d="M1415,361.0 C1415,570.0 1375,570.0 1375,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1370,771.0 1380,771.0 1375,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1720,361.0 C1720,465.0 1630,465.0 1630,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1625,561.0 1635,561.0 1630,570.0" fill="#475569" opacity="0.85"/>
+<path d="M1690,361.0 C1690,570.0 1405,570.0 1405,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1400,771.0 1410,771.0 1405,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1600,501.0 C1600,535.0 1600,535.0 1600,569.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1595,561.0 1605,561.0 1600,570.0" fill="#475569" opacity="0.85"/>
+<path d="M1560,501.0 C1560,590.0 1290,590.0 1290,679.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1285,671.0 1295,671.0 1290,680.0" fill="#475569" opacity="0.85"/>
+<path d="M1530,501.0 C1530,640.0 1430,640.0 1430,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1425,771.0 1435,771.0 1430,780.0" fill="#475569" opacity="0.85"/>
+<path d="M965,501.0 C965,640.0 1290,640.0 1290,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1285,771.0 1295,771.0 1290,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1110,641.0 C1110,660.0 1220,660.0 1220,679.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1215,671.0 1225,671.0 1220,680.0" fill="#475569" opacity="0.85"/>
+<path d="M1140,641.0 C1140,710.0 1315,710.0 1315,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1310,771.0 1320,771.0 1315,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1570,641.0 C1570,710.0 1355,710.0 1355,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1350,771.0 1360,771.0 1355,780.0" fill="#475569" opacity="0.85"/>
+<path d="M1250,751.0 C1250,765.0 1335,765.0 1335,779.0" fill="none" stroke="#475569" stroke-width="1.6" opacity="0.85"/>
+<polygon points="1330,771.0 1340,771.0 1335,780.0" fill="#475569" opacity="0.85"/>
+<rect x="1215.0" y="184.0" width="240" height="62" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="1335" y="209" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:app</text>
+<text x="1335" y="230" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.application</text>
+<rect x="845.0" y="299.0" width="240" height="62" rx="10" fill="#FFEDD5" stroke="#EA580C" stroke-width="2"/>
+<text x="965" y="324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:presentation:features:home</text>
+<text x="965" y="345" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.feature</text>
+<rect x="1095.0" y="299.0" width="240" height="62" rx="10" fill="#FFEDD5" stroke="#EA580C" stroke-width="2"/>
+<text x="1215" y="324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:presentation:features:advert</text>
+<text x="1215" y="345" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.feature</text>
+<rect x="1355.0" y="299.0" width="240" height="62" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="1475" y="324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:data:sourcesImpl:remote</text>
+<text x="1475" y="345" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.library</text>
+<rect x="1559.0" y="289.0" width="30" height="18" rx="9" fill="#16A34A"/>
+<text x="1574.0" y="302.0" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ksp</text>
+<rect x="1497.0" y="289.0" width="58" height="18" rx="9" fill="#16A34A"/>
+<text x="1526.0" y="302.0" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">flavors</text>
+<rect x="1600.0" y="299.0" width="240" height="62" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="1720" y="324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:data:sourcesImpl:local</text>
+<text x="1720" y="345" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.library</text>
+<rect x="1804.0" y="289.0" width="30" height="18" rx="9" fill="#16A34A"/>
+<text x="1819.0" y="302.0" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ksp</text>
+<rect x="845.0" y="439.0" width="240" height="62" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="965" y="464" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:presentation:common</text>
+<text x="965" y="485" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.compose.library</text>
+<rect x="1095.0" y="439.0" width="240" height="62" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="1215" y="464" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:presentation:analytics</text>
+<text x="1215" y="485" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">android.compose.library</text>
+<rect x="1480.0" y="439.0" width="240" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="1600" y="464" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:data:repositoryImpl</text>
+<text x="1600" y="485" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.library</text>
+<rect x="970.0" y="579.0" width="240" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="1090" y="604" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:domain:useCase</text>
+<text x="1090" y="625" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.library</text>
+<rect x="1480.0" y="579.0" width="240" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="1600" y="604" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:data:sources</text>
+<text x="1600" y="625" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.library</text>
+<rect x="1130.0" y="689.0" width="240" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="1250" y="714" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:domain:repository</text>
+<text x="1250" y="735" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.library</text>
+<rect x="1215.0" y="789.0" width="240" height="62" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="1335" y="814" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0F172A">:domain:model</text>
+<text x="1335" y="835" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" text-anchor="middle" fill="#475569">kotlin.library</text>
+<rect x="30" y="890" width="1840" height="160" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+<text x="54" y="920" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="start" fill="#0F172A">Legend</text>
+<rect x="54" y="938" width="26" height="18" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="90" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">android.application</text>
+<rect x="266.5" y="938" width="26" height="18" rx="5" fill="#FFEDD5" stroke="#EA580C" stroke-width="2"/>
+<text x="302.5" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">android.feature</text>
+<rect x="449.0" y="938" width="26" height="18" rx="5" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="485.0" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">android.compose.library / compose</text>
+<rect x="766.5" y="938" width="26" height="18" rx="5" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="802.5" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">android.library</text>
+<rect x="949.0" y="938" width="26" height="18" rx="5" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+<text x="985.0" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">kotlin.library (JVM)</text>
+<rect x="1169.0" y="938" width="26" height="18" rx="5" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="1205.0" y="952" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">shared internal plugin</text>
+<path d="M54,992 L96,992" stroke="#475569" stroke-width="1.6"/>
+<polygon points="95,987 95,997 104,992" fill="#475569" opacity="1.0"/>
+<text x="114" y="997" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">implementation dependency / applied plugin</text>
+<path d="M480,992 L522,992" stroke="#2563EB" stroke-width="1.1" opacity="0.35"/>
+<polygon points="521,987 521,997 530,992" fill="#2563EB" opacity="0.35"/>
+<text x="540" y="997" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">:app depends directly on all 11 modules</text>
+<rect x="900" y="983" width="40" height="18" rx="9" fill="#16A34A"/>
+<text x="920" y="996" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ksp</text>
+<text x="950" y="997" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#0F172A">extra plugin applied in the module (ksp, android.flavors)</text>
+<text x="54" y="1032" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start" fill="#475569">Features get model, useCase, analytics and common through the android.feature plugin. google-services and crashlytics are declared in the root build but commented out in :app.</text>
+</svg>

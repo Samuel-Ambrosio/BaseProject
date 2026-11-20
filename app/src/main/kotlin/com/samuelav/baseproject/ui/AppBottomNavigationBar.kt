@@ -1,17 +1,21 @@
 package com.samuelav.baseproject.ui
 
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.samuelav.presentation.common.app.AppState
 import com.samuelav.presentation.common.app.navigation.NavItem
 import com.samuelav.presentation.common.extensions.clearAndAdd
 import com.samuelav.presentation.common.ui.theme.AppTheme.colors
+
+private const val UNSELECTED_ALPHA = 0.6f
 
 @Composable
 internal fun AppBottomNavigationBar(appState: AppState) {
@@ -24,9 +28,9 @@ internal fun AppBottomNavigationBar(appState: AppState) {
         navItem.navKey.javaClass == lastNavItemKey?.javaClass
     } ?: NavItem.Home
 
-    BottomNavigation(backgroundColor = colors.surface, contentColor = colors.primary) {
+    NavigationBar(containerColor = colors.surface, contentColor = colors.primary) {
         navItems.forEach { navItem ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = {
                     Icon(
                         modifier = Modifier.size(24.dp),
@@ -37,7 +41,13 @@ internal fun AppBottomNavigationBar(appState: AppState) {
                 selected = navItem == currentNavItem,
                 onClick = {
                     appState.navBackStack.clearAndAdd(NavItem.Home.navKey, navItem.navKey)
-                }
+                },
+                // Keeps the Material 2 look: no selection pill, unselected items dimmed
+                colors = NavigationBarItemDefaults.colors(
+                    selectedIconColor = colors.primary,
+                    unselectedIconColor = colors.primary.copy(alpha = UNSELECTED_ALPHA),
+                    indicatorColor = Color.Transparent,
+                ),
             )
         }
     }

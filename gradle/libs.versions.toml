@@ -1,8 +1,13 @@
 [versions]
+#Project
+compileSdk = "37"
+targetSdk = "37"
+minSdk = "26"
+jvmTarget = "25"
+
 #Gradle
-androidGradlePlugin = "9.1.1"
+androidGradlePlugin = "9.4.0"
 versionsGradlePlugin = "0.54.0"
-graphGeneratorGradlePlugin = "0.8.0"
 crashlyticsGradlePlugin = "3.0.7"
 detekt = "2.0.0-alpha.6"
 
@@ -17,10 +22,8 @@ desugarJdkLibs = "2.1.5"
 
 #AndroidX
 coreKtx = "1.19.0"
-appCompat = "1.8.0"
 lifecycle = "2.11.0"
 compose = "2026.08.00"
-composeNavigation = "2.9.8"
 composeNavigation3 = "1.1.6"
 composeNavigation3ViewModel = "2.11.0"
 composeConstraint = "1.1.2"
@@ -32,8 +35,6 @@ dataStore = "1.2.1"
 timber = "5.0.1"
 
 #Google
-accompanist = "0.36.0"
-accompanistPermissions = "0.37.3"
 material = "1.14.0"
 services = "4.5.0"
 servicesAds = "25.4.0"
@@ -52,8 +53,8 @@ androidEspresso = "3.7.0"
 
 [libraries]
 #Dependencies
-kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinCore" }
-kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
 kotlin-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinSerializationCore" }
 
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
@@ -62,7 +63,6 @@ koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", versi
 android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-navigation3 = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-navigation3", version.ref = "composeNavigation3ViewModel" }
@@ -70,10 +70,9 @@ androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", versi
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-compose-material = { group = "androidx.compose.material", name = "material"}
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
-androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
 androidx-compose-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "composeNavigation3" }
 androidx-compose-navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "composeNavigation3" }
 androidx-compose-constraint = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "composeConstraint" }
@@ -85,11 +84,6 @@ androidx-datastore = { group = "androidx.datastore", name = "datastore-preferenc
 
 debug-timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
-google-accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanist" }
-google-accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanistPermissions" }
-google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
-google-accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
-google-accompanist-placeholder = { group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanist" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
 google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
@@ -112,25 +106,21 @@ test-android-junit-compose = { group = "androidx.compose.ui", name = "ui-test-ju
 test-android-ui-compose = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 test-android-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidEspresso" }
 
-#Plugins
+#Gradle plugins: compileOnly in build-logic, the applied versions come from the plugins section
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinCore" }
 kotlinSerializationGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlinCore" }
 composeCompilerGradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlinCore" }
-googleServicesGradlePlugin = { group = "com.google.gms", name = "google-services", version.ref = "services" }
-crashlyticsGradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "crashlyticsGradlePlugin" }
-checkVersionsGradlePlugin = { group = "com.github.ben-manes", name = "gradle-versions-plugin", version.ref = "versionsGradlePlugin" }
-dependencyGraphGeneratorGradlePlugin = { group = "com.vanniktech", name = "gradle-dependency-graph-generator-plugin", version.ref = "graphGeneratorGradlePlugin" }
+detektGradlePlugin = { group = "dev.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 
 [plugins]
-androidApplication = { id = "com.android.application" }
-androidLibrary = { id = "com.android.library" }
-kotlin = { id = "kotlin" }
-kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization" }
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinCore" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinCore" }
+compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinCore" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-compose = { id = "org.jetbrains.kotlin.plugin.compose" }
-googleServices = { id = "com.google.gms.google-services" }
-crashlytics = { id = "com.google.firebase.crashlytics" }
-checkVersions = { id = "com.github.ben-manes.versions" }
-dependencyGraphGenerator = { id = "com.vanniktech.dependency.graph.generator" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "services" }
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsGradlePlugin" }
+checkVersions = { id = "com.github.ben-manes.versions", version.ref = "versionsGradlePlugin" }
 detekt = { id = "dev.detekt", version.ref = "detekt" }
