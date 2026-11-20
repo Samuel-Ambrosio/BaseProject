@@ -11,12 +11,11 @@ Work through this list top to bottom. Everything marked *optional* can stay as i
 ### 2. Branding (required)
 - [ ] Launcher icon: `presentation/common/src/main/res/mipmap-*/ic_launcher*` and `drawable(-night)/ic_launcher_{foreground,background}.xml` (Android Studio → *New → Image Asset*). The foreground drawable is also the splash icon (`app/src/main/res/values/themes.xml`).
 - [ ] Colors and theme: `presentation/common/src/main/res/values/colors.xml`, `themes.xml` and `ui/theme/*.kt`.
-- [ ] Strings in `presentation/common/src/main/res/values/strings.xml` (and `values-es/`): `app_email_contact` (used by the "contact" mail action), `app_share_link` (Play Store link), `developed_by`.
+- [ ] Strings in `presentation/common/src/main/res/values/strings.xml`: `app_email_contact` (default recipient of `sendEmail`), `app_share_link` (Play Store link to use with `shareText`), and `developed_by` (also in `values-es/`).
 
 ### 3. Backend (required)
 - [ ] `API_BASE_PATH` per environment (`dev` / `pre` / `pro`) in `build-logic/src/main/kotlin/convention.android.flavors.gradle.kts`.
 - [ ] Replace the sample *Todo* feature (`jsonplaceholder`): `TodoService`, `NetworkTodo`, `TodoRemoteDataSource(Impl)`, `TodoRepository(Impl)`, `GetAllTodosUseCase`, `Todo` and the home screen that uses it.
-- [ ] Remove error strings left over from a previous app: `result_error_balance`, `result_error_exchanges`, `result_error_market_prices`.
 
 ### 4. Firebase — Analytics + Crashlytics (required before release)
 The Firebase SDKs are already dependencies; until this is done Analytics/Crashlytics calls will fail at runtime.

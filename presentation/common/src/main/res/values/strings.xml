@@ -8,10 +8,8 @@
     <string name="nav_item_search">Search</string>
     <string name="result_error_bad_gateway">Service unreachable. Please try again later.</string>
     <string name="result_error_bad_request">Service unavailable. Please try again later.</string>
-    <string name="result_error_balance">Error loading generation data.\nTap or swipe to refresh.</string>
-    <string name="result_error_exchanges">Error loading exchanges data.\nTap or swipe to refresh.</string>
     <string name="result_error_forbidden">Service unavailable. Please try again later.</string>
-    <string name="result_error_market_prices">Error loading market prices data.\nTap or swipe to refresh.</string>
+    <string name="result_error_loading_data">Error loading data.\nTap or swipe to refresh.</string>
     <string name="result_error_network">Network unavailable.</string>
     <string name="result_error_no_content">No content found.</string>
     <string name="result_error_not_found">Service unavailable. Please try again later.</string>
